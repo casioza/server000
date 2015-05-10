@@ -1,0 +1,880 @@
+//=============================================================
+//		-             Xtrap-Colo Scripts             -
+//=============================================================
+
+-	script	jobmaster	-1,{
+
+
+	set @MinimumJB, 40; //Minimum job level for changing between 2nd and advance class (Default : 40)
+	set @GivePlat, 0; //Give Platinum skills on Jobchange (Default : 1-yes)
+	set @SupNovM, 45; //Base Level to change into Super Novice (Default : 45)
+	set @MinimumJBHigh, 50; // job
+	set Natural_Status,0;
+
+	if(class == 4023) goto c_baby1;
+	if(class == 4024) goto c_baby2;
+	if(class == 4025) goto c_baby3;
+	if(class == 4026) goto c_baby4;
+	if(class == 4027) goto c_baby5;
+	if(class == 4028) goto c_baby6;
+	if(class == 4029) goto c_baby7;
+
+	if((class >=4008) && (class <=4022)) goto L_iHighAlready;
+	//if(SkillPoint != 0) goto L_skillUsed;
+	if(class ==0 ) goto L_novice;
+	if(JobLevel <10) goto L_notEn;
+	if((class ==4001) && ((lastJob ==7) || (lastJob ==14))) goto L_cHsword;
+	if((class ==4001) && ((lastJob ==9) || (lastJob ==16))) goto L_cHmage;
+	if((class ==4001) && ((lastJob ==11) || (lastJob ==19) || (lastJob ==20))) goto L_cHarcher;
+	if((class ==4001) && ((lastJob ==8) || (lastJob ==15))) goto L_cHacolyte;
+	if((class ==4001) && ((lastJob ==10) || (lastJob ==18))) goto L_cHmerchant;
+	if((class ==4001) && ((lastJob ==12) || (lastJob ==17))) goto L_cHthief;
+	if(JobLevel <@MinimumJB) goto L_notEn;
+	if(checkfalcon() == 1 || checkcart() == 1 || checkriding() == 1) goto L_remove;
+	if(class == 1) goto L_iSword;
+	if(class == 2) goto L_iMage;
+	if(class == 3) goto L_iArcher;
+	if(class == 4) goto L_iAcolyte;
+	if(class == 5) goto L_iMerchant;
+	if(class == 6) goto L_iThief;
+	if(Class == 4046) goto L_iTaekwon;
+	if(JobLevel <@MinimumJBHigh) goto L_notEn;
+	if((class >=7) && (class <=20) && (class != 13) && (class != 21)) goto L_rebirth;
+	if(class == 4002 && lastJob ==7) goto L_iKnight;
+	if(class == 4005 && lastJob ==8) goto L_iPriest;
+	if(class == 4003 && lastJob ==9) goto L_iWizard;
+	if(class == 4006 && lastJob ==10) goto L_iBlacksmith;
+	if(class == 4004 && lastJob ==11) goto L_iHunter;
+	if(class == 4007 && lastJob ==12) goto L_iAssassin;
+	if(class == 4002 && lastJob ==14) goto L_iCrusader;
+	if(class == 4005 && lastJob ==15) goto L_iMonk;
+	if(class == 4003 && lastJob ==16) goto L_iSage;
+	if(class == 4007 && lastJob ==17) goto L_iRogue;
+	if(class == 4006 && lastJob ==18) goto L_iAlchemist;
+	if(class == 4004 && lastJob ==19) goto L_iBard;
+	if(class == 4004 && lastJob ==20) goto L_iDancer;
+
+	close;
+
+// Novice
+	L_novice:
+		skill 142,1,0;
+		skill 143,1,0;
+		if(JobLevel<10) goto L_notEn;
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ยินดีต้อนรับ, โปรดเลือกอาชีพที่เธอปรารถนาจะเป็น";
+		next;
+		menu "Baby",c_nv1,"Swordsman",L_sword,"Mage",L_mage,"Archer",L_archer,"Acolyte",L_acolyte,"Merchant",L_merchant,"Thief",L_thief,"Taekwon",L_TK,"Gunslinger",L_GS,"Ninja",L_NJ,"Super Novice",L_superN;
+
+c_nv1:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "เอาหล่ะ เจ้า โนวิทน้อย";
+mes "การที่เจ้าจะย้อนกลับไปเป็นเด็กนั้น";
+mes "เจ้าจะไม่มีวันกลับมาเหมือนวันนี้ได้อีกแล้วนะ";
+mes "และเจ้าจะมีเลเวล ได้แค่ เลเวล 80";
+mes "Status อัพได้สูงสูด 80 เท่านั้น";
+mes "และเงินอีก 1,0000 zeny";
+mes "ในการเปลี่ยนครั้งแรก";
+mes "เจ้าตกลงไหม ?";
+next;
+menu "ข้าตกลง",-,"ไม่เอาหล่ะ",L_not;
+//if(SkillPoint != 0) {
+//	mes "[ ^fac766Baby Class^000000 ]";
+//	mes "ฉันเสียใจด้วย, โปรดอัพสกิลพ้อยต์ของเจ้าให้หมดก่อนจะเปลี่ยนอาชีพ";
+//	close;
+//}
+if(JobLevel < 10){
+	mes "[ ^fac766Baby Class^000000 ]";
+	mes "ฉันเสียใจด้วย, เธอมี Job Level ไม่เพียงพอ";
+	close;
+}
+mes "[ ^fac766Baby Class^000000 ]";
+mes "ข้าขอยินดีด้วยกับหนูน้อยคนใหม่";
+mes "เจ้าได้เป็น ^cb0da0Baby Class^000000 เรียบร้อยแล้ว";
+next;
+ResetStatus;
+ResetSkill;
+set SkillPoint,0;
+jobchange 4023;
+close;
+
+c_baby1:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "เลือกตามที่เจ้าชอบได้เลย";
+next;
+menu
+"Baby Swordman",J_1_1,
+"Baby Mage",J_1_2,
+"Baby Archer",J_1_3,
+"Baby Acolyte",J_1_4,
+"Baby Merchant",J_1_5,
+"Baby Thief",J_1_6,
+"Super Baby",J_1_7,
+"ยกเลิก",L_not;
+
+J_1_1:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "^68850eBaby Sword^000000 หรอ...อืมม์";
+mes "มาดูกันว่าเจ้าพร้อมหรือยัง";
+next;
+if(joblevel<10) goto N_job;
+jobchange 4024;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "OK ตอนนี้ เจาได้เป็น";
+mes "^b48549Baby Sword^000000";
+mes "เรียบร้อยแล้ว";
+close;
+
+J_1_2:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "^68850eBaby Mage^000000 หรอ...อืมม์";
+mes "มาดูกันว่าเจ้าพร้อมหรือยัง";
+next;
+if(joblevel<10) goto N_job;
+jobchange 4025;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "OK ตอนนี้ เจาได้เป็น";
+mes "^b48549Baby Mage^000000";
+mes "เรียบร้อยแล้ว";
+close;
+
+J_1_3:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "^68850eBaby Archer^000000 หรอ...อืมม์";
+mes "มาดูกันว่าเจ้าพร้อมหรือยัง";
+next;
+if(joblevel<10) goto N_job;
+jobchange 4026;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "OK ตอนนี้ เจาได้เป็น";
+mes "^b48549Baby Archer^000000";
+mes "เรียบร้อยแล้ว";
+close;
+
+J_1_4:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "^68850eBaby Acolyte^000000 หรอ...อืมม์";
+mes "มาดูกันว่าเจ้าพร้อมหรือยัง";
+next;
+if(joblevel<10) goto N_job;
+jobchange 4027;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "OK ตอนนี้ เจาได้เป็น";
+mes "^b48549Baby Acolyte^000000";
+mes "เรียบร้อยแล้ว";
+close;
+
+J_1_5:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "^68850eBaby Merchant^000000 หรอ...อืมม์";
+mes "มาดูกันว่าเจ้าพร้อมหรือยัง";
+next;
+if(joblevel<10) goto N_job;
+jobchange 4028;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "OK ตอนนี้ เจาได้เป็น";
+mes "^b48549Baby Merchant^000000";
+mes "เรียบร้อยแล้ว";
+close;
+
+J_1_6:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "^68850eBaby Thief^000000 หรอ...อืมม์";
+mes "มาดูกันว่าเจ้าพร้อมหรือยัง";
+next;
+if(joblevel<10) goto N_job;
+jobchange 4029;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "OK ตอนนี้ เจาได้เป็น";
+mes "^b48549Baby Thief^000000";
+mes "เรียบร้อยแล้ว";
+close;
+J_1_7:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "^68850eSuper Baby^000000 หรอ...อืมม์";
+mes "มาดูกันว่าเจ้าพร้อมหรือยัง";
+next;if(baselevel<45) goto N_lv;
+if(joblevel<10) goto N_job;
+jobchange 4045;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "OK ตอนนี้ เจาได้เป็น";
+mes "^b48549Super Baby^000000";
+mes "เรียบร้อยแล้ว";
+close;
+
+c_baby2:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "เจ้ามาถึงขั้นต่อไปของตระกลู Baby แล้ว";
+mes "จงเลือกตามที่เจ้าต้องการ";
+next;
+menu
+"Baby Knight",J_2_1,
+"Baby Crusader",J_2_2,
+"ยกเลิก",L_not;
+J_2_1:
+if(joblevel<40) goto N_job;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4030;
+close;
+J_2_2:
+if(joblevel<40) goto N_job;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4037;
+close;
+
+c_baby3:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "เจ้ามาถึงขั้นต่อไปของตระกลู Baby แล้ว";
+mes "จงเลือกตามที่เจ้าต้องการ";
+next;
+menu
+"Baby Wizard",J_2_3,
+"Baby Sage",J_2_4,
+"ยกเลิก",L_not;
+J_2_3:
+if(joblevel<40) goto N_job;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4032;
+close;
+J_2_4:
+if(joblevel<40) goto N_job;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4039;
+close;
+
+c_baby4:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "เจ้ามาถึงขั้นต่อไปของตระกลู Baby แล้ว";
+mes "จงเลือกตามที่เจ้าต้องการ";
+next;
+menu
+"Baby Hunter",J_2_5,
+"Baby Bard",J_2_6,
+"ยกเลิก",L_not;
+J_2_5:
+if(joblevel<40) goto N_job;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4034;
+close;
+J_2_6:
+if(joblevel<40) goto N_job;
+if(sex==1) goto SF;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4042;
+close;
+SF:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4043;
+close;
+
+c_baby5:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "เจ้ามาถึงขั้นต่อไปของตระกลู Baby แล้ว";
+mes "จงเลือกตามที่เจ้าต้องการ";
+next;
+menu
+"Baby Priest",J_2_7,
+"Baby Monk",J_2_8,
+"ยกเลิก",L_not;
+J_2_7:
+if(joblevel<40) goto N_job;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4031;
+close;
+J_2_8:
+if(joblevel<40) goto N_job;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4038;
+close;
+
+c_baby6:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "เจ้ามาถึงขั้นต่อไปของตระกลู Baby แล้ว";
+mes "จงเลือกตามที่เจ้าต้องการ";
+next;
+menu
+"Baby Blacksmith",J_2_9,
+"Baby Alchemith",J_2_10,
+"ยกเลิก",L_not;
+J_2_9:
+if(joblevel<40) goto N_job;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4033;
+close;
+J_2_10:
+if(joblevel<40) goto N_job;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4041;
+close;
+
+c_baby7:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "เจ้ามาถึงขั้นต่อไปของตระกลู Baby แล้ว";
+mes "จงเลือกตามที่เจ้าต้องการ";
+next;
+menu
+"Baby Assassin",J_2_11,
+"Baby Rogue",J_2_12,
+"ยกเลิก",L_not;
+J_2_11:
+if(joblevel<40) goto N_job;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4035;
+close;
+J_2_12:
+if(joblevel<40) goto N_job;
+mes "[ ^fac766Baby Class^000000 ]";
+mes "การเปลี่ยนอาชีพเรียบร้อยแล้ว";
+jobchange 4040;
+close;
+
+
+L_not:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "ขอให้เจ้าโชคดี";
+
+close;
+
+N_nv:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "ขออภัย ! การเปลี่ยน Baby Class นั้น";
+mes "ต้องมีอาชีพเป็น Novice เท่านั้น";
+close;
+
+
+N_job:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "Job Lv ของเจ้าไม่พอ";
+mes "ไปเก็บมาให้ครบ แล้วมาเจอกันใหม่";
+close;
+
+N_lv:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "Lv ของเจ้าไม่พอ";
+mes "ไปเก็บมาให้ครบ แล้วมาเจอกันใหม่";
+close;
+
+N_zeny:
+mes "[ ^fac766Baby Class^000000 ]";
+mes "เจ้ามีเงินไม่พอนิ";
+mes "ไปหามามาให้ครบ";
+close;
+
+
+// Change to Swordsman
+			L_sword:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 1;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+// Change to Mage
+			L_mage:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 2;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+// Change to Archer
+			L_archer:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 3;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+// Change to Acolyte
+			L_acolyte:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 4;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+// Change to Merchant
+			L_merchant:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 5;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+// Change to Thief
+			L_thief:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 6;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+// Taekwon
+			L_TK:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 4046;
+				close;
+// Gunslinger
+			L_GS:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 24;
+				close;		
+// Ninja
+			L_NJ:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 25;
+				close;			
+// Change to Super Novice
+			L_superN:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				if(BaseLevel<@SupNovM) goto L_notSup;
+				jobchange 23;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+// Change to Knight/Crusader
+	L_iSword:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ยินดีต้อนรับ, โปรดเลือกอาชีพที่เธอปรารถนาจะเป็น";
+		menu "Knight",L_knight,"Crusader",L_crusader;
+			L_knight:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 7;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+			L_crusader:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 14;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+// Change to Wizard/Sage
+	L_iMage:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ยินดีต้อนรับ, โปรดเลือกอาชีพที่เธอปรารถนาจะเป็น";
+		menu "Wizard",L_wizard,"Sage",L_sage;
+			L_wizard:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 9;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+			L_sage:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 16;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+// Change to Hunter/Bard/Dancer
+	L_iArcher:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ยินดีต้อนรับ, โปรดเลือกอาชีพที่เธอปรารถนาจะเป็น";
+		menu "Hunter",L_hunter,"Bard/Dancer",L_bandd;
+			L_hunter:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 11;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+			L_bandd:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				if(sex==0) goto L_dancer;
+				if(sex==1) goto L_bard;
+				L_bard:
+					jobchange 19;
+					//setlook 7,0;
+					if(GivePlat ==1) goto L_givePlat;
+					close;
+				L_dancer:
+					jobchange 20;
+					//setlook 7,0;
+					if(GivePlat ==1) goto L_givePlat;
+					close;
+// Change to Priest/Monk
+	L_iAcolyte:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ยินดีต้อนรับ, โปรดเลือกอาชีพที่เธอปรารถนาจะเป็น";
+		menu "Priest",L_priest,"Monk",L_monk;
+			L_priest:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 8;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+			L_monk:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 15;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+// Change to Blacksmith/Alchemist
+	L_iMerchant:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ยินดีต้อนรับ, โปรดเลือกอาชีพที่เธอปรารถนาจะเป็น";
+		menu "Blacksmith",L_blacksmith,"Alchemist",L_alchemist;
+			L_blacksmith:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 10;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+			L_alchemist:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 18;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+// Change to Assassin/Rogue
+	L_iThief:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ยินดีต้อนรับ, โปรดเลือกอาชีพที่เธอปรารถนาจะเป็น";
+		menu "Assassin",L_assassin,"Rogue",L_rogue;
+			L_assassin:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 12;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+			L_rogue:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange 17;
+				//setlook 7,0;
+				if(GivePlat ==1) goto L_givePlat;
+				close;
+	// Change to Star Gladiator/Soul Linker
+	L_iTaekwon:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ยินดีต้อนรับ, โปรดเลือกอาชีพที่เธอปรารถนาจะเป็น";
+		menu "Star Gladiator",L_SG,"Soul Linker",L_SL;
+			L_SG:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange Job_Star_Gladiator;
+				close;
+			L_SL:
+				mes "แน่ใจนะ?";
+				menu "ไม่ดีกว่า",L_quit,"ใช่แล้ว..แน่นอน",-;
+				jobchange Job_Soul_Linker;
+				close;
+// Rebirth
+	L_rebirth:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการเกิดใหม่?";
+		next;
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+		if ((BaseLevel < 99) || (JobLevel < 50)) goto L_cantCh;
+		set lastJob, Class;
+		jobchange 4001;
+		//setlook 7,1;
+		resetlvl(1);
+		skill 142,1,0;
+		skill 143,1,0;
+		set reset,0;
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอได้เกิดใหม่แล้ว";
+		mes "กลับมาอีกครั้งเมื่อพร้อม";
+		close;
+	L_cHsword:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ High Swordsman?";
+		next;
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+		jobchange 4002;
+		//setlook 7,23;
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ขอบคุณ, โปรดกลับมาอีกครั้งในเร็วนี้!";
+		close;
+	L_cHmage:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ High Mage?";
+		next;
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+		jobchange 4003;
+		//setlook 7,23;
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ขอบคุณ, โปรดกลับมาอีกครั้งในเร็วนี้!";
+		close;
+	L_cHarcher:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ High Archer?";
+		next;
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+		jobchange 4004;
+		//setlook 7,43;
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ขอบคุณ, โปรดกลับมาอีกครั้งในเร็วนี้!";
+		close;
+	L_cHacolyte:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ High Acolyte?";
+		next;
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+		jobchange 4005;
+		//setlook 7,23;
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ขอบคุณ, โปรดกลับมาอีกครั้งในเร็วนี้!";
+		close;
+	L_cHmerchant:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ High Merchant?";
+		next;
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+		jobchange 4006;
+		//setlook 7,23;
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ขอบคุณ, โปรดกลับมาอีกครั้งในเร็วนี้!";
+		close;
+	L_cHthief:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ High Thief?";
+		next;
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+		jobchange 4007;
+		//setlook 7,23;
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ขอบคุณ, โปรดกลับมาอีกครั้งในเร็วนี้!";
+		close;	
+// Change to Lord Knight
+	L_iKnight:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ Lord Knight?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4008;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to Paladin
+	L_iCrusader:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ Paladin?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4015;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to High Priest
+	L_iPriest:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ High Priest?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4009;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to Champion
+	L_iMonk:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ Champion?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4016;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to Whitesmith
+	L_iBlacksmith:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ Whitesmith?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4011;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to Creator
+	L_iAlchemist:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ Creator?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4019;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to High Wizard
+	L_iWizard:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ High Wizard?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4010;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to Professor
+	L_iSage:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ Professor?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4017;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to Sniper
+	L_iHunter:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ Sniper?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4012;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to Clown
+	L_iBard:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ Clown?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4020;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to Gypsy
+	L_iDancer:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ Gypsy?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4021;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to Assassin Cross
+	L_iAssassin:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ Assassin Cross?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4013;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Change to Stalker
+	L_iRogue:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "เธอต้องการจะเปลี่ยนอาชีพไปสู่ Stalker?";
+		menu "ใช่",-,"ไม่ใช่",L_quit;
+			jobchange 4018;
+			set lastJob,0;
+			set zeny,zeny +1000000;
+			if(GivePlat ==1) goto L_givePlat;
+			close;
+// Giving Platinum Skills
+	L_givePlat:
+		if (BaseJob==Job_SuperNovice) goto L_sSuperN;
+		if ((Class==Job_Swordman) || (Class==7) || (Class==13) || (Class==14)|| (Class==21) || (Class==4002) || (Class==4008)) goto L_sSword;
+		if ((Class==Job_Mage) || (Class==9) || (Class==16) || (Class==4003) || (Class==4010) || (Class==4017)) goto L_sMage;
+		if ((Class==Job_Archer) || (Class==11) || (Class==19) || (Class==20) || (Class==4004) || (Class==4012) || (Class==4020) || (Class==4021)) goto L_sArcher;
+		if ((Class==Job_Acolyte) || (Class==8) || (Class==15) || (Class==50) || (Class==54) || (Class==61) || (Class==4005) || (Class==4009) || (Class==4016)) goto L_sAcolyte;
+		if ((Class==Job_Merchant) || (Class==10) || (Class==18) || (Class==51) || (Class==56) || (Class==64) || (Class==4006) || (Class==4011) || (Class==4019)) goto L_sMerchant;
+		if ((Class==Job_Thief) || (Class==12) || (Class==17) || (Class==52) || (Class==58) || (Class==63) || (Class==4007) || (Class==4013) || (Class==4018)) goto L_sThief;
+		L_sSuperN:
+			skill 142,1,0;
+			close;
+		L_sSword:
+			skill 142,1,0;
+			skill 144,1,0;
+			skill 145,1,0;
+			skill 146,1,0;
+		L_sMage:
+			skill 142,1,0;
+			skill 157,1,0;
+			close;
+		L_sArcher:
+			skill 142,1,0;
+			skill 147,1,0;
+			skill 148,1,0;
+			close;
+		L_sAcolyte:
+			skill 142,1,0;
+			skill 156,1,0;
+			close;
+		L_sMerchant:
+			skill 142,1,0;
+			skill 153,1,0;
+			skill 154,1,0;
+			skill 155,1,0;
+			close;
+		L_sThief:
+			skill 142,1,0;
+			skill 149,1,0;
+			skill 150,1,0;
+			skill 151,1,0;
+			skill 152,1,0;
+			close;
+	L_quit:
+		close;
+// Errors
+	L_cantCh:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ฉันเสียใจด้วย, เธอไม่มีคุณสมบัติพอที่จะเปลี่ยนได้";
+		mes "โปรดกลับมาอีกครั้งเมื่อพร้อม!";
+		close;
+	L_skillUsed:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ฉันเสียใจด้วย, โปรดอัพสกิลพ้อยต์ของเจ้าให้หมดก่อนจะเปลี่ยนอาชีพ";
+		mes "โปรดกลับมาอีกครั้งเมื่อพร้อม!";
+		close;
+	L_notEn:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ฉันเสียใจด้วย, เธอมี Job Level ไม่เพียงพอ";
+		mes "โปรดกลับมาอีกครั้งเมื่อพร้อม!";
+		close;
+	L_notSup:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ฉันเสียใจด้วย, เธอมี Base Level ไม่เพียงพอ";
+		mes "โปรดกลับมาอีกครั้งเมื่อพร้อม!";
+		close;
+	L_remove:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "โปรดถอดรถเข็น, ปล่อยนก หรือลงจาก peco เสียก่อน";
+		mes "แล้วกลับมาหาฉันอีกครั้ง!";
+		close;
+	L_iHighAlready:
+		mes "^ff0000[เปลี่ยนอาชีพ]^000000";
+		mes "ชีวิตใหม่ของเธอเป็นยังไงบ้าง";
+		mes "ทักษะระดับสูงที่เจ้าได้มา";
+		mes "จงใช้เพื่อช่วยเหลือผู้อื่น";
+		mes "อย่าใช้มันในทางที่ผิดล่ะ";
+		close;
+OnInit:
+waitingroom "-> เปลี่ยนอาชีพ",0;
+end;
+}
+
+
+

@@ -1,0 +1,95 @@
+function	script	Animal_Sheep	{
+Main:
+if(#Animal_Sheep == 0) goto NotMain;
+
+if(#Animal_Sheep == 1){
+
+if(#Sheep_Clear <= 0) goto Sheep_Sick;
+
+	if(#Sheep_Animal_Feed != gettime(5)) goto NotFeed;
+
+		if(#Sheep_Animal_Clean != gettime(5)) && (#Sheep_Clear <= 5) goto NotClean;
+
+if(#Sheep_Animal_Upitem != gettime(5)) && (#Sheep_Feed_Count >= 2) goto NotUpitem;
+
+mes "^006611สถานะ^000000 : ^008080สุขภาพดี ...^000000";
+mes "^006611ความสะอาด^000000 : (^008080"+#Sheep_Clear+"/20^000000)";
+mes "^006611ค่า Love^000000 : (^008080"+#Status_Love_Sheep+"/100^000000)";
+close;
+}
+
+NotFeed:
+mes "^006611สถานะ^000000 : ^008080ยังไม่ได้อาหาร ...^000000";
+next;
+menu "-^006611 ให้อาหาร^000000",-,"-^FF0000 ยังอะ^000000",exit;
+next;
+sleep2 3000;
+mes "^006611สถานะ^000000 : ^008080ให้อาหาร เรียบร้อยแล้ว...^000000";
+emotion e_lv2;
+if(#Sheep_Feed_Count >= 3) { set #Status_Love_Sheep,#Status_Love_Sheep-3; }
+set #Sheep_Animal_Feed,gettime(5);
+set #Sheep_Feed_Count,#Sheep_Feed_Count+1;
+set #Sheep_Clear,#Sheep_Clear-1;
+set #Status_Love_Sheep,#Status_Love_Sheep+1;
+next;
+goto Main;
+
+NotClean:
+mes "^006611สถานะ^000000 : ^008080ยังไม่ได้ ทำความสะอาดให้ สัตว์เลี้ยง ...^000000";
+next;
+menu "-^006611 ทำความสะอาด^000000",-,"-^FF0000 ไว้ทีหลัง^000000",backClean;
+sleep2 3000;
+emotion e_swt;
+set #Sheep_Animal_Clean,gettime(5);
+set #Sheep_Clear,#Sheep_Clear+10;
+set #Status_Love_Sheep,#Status_Love_Sheep+1;
+next;
+goto Main;
+
+backClean:
+set #Sheep_Animal_Clean,gettime(5);
+set #Status_Love_Sheep,#Status_Love_Sheep-3;
+mes "^006611สถานะ^000000 : ^008080ยังไม่ได้ ทำความสะอาดให้ สัตว์เลี้ยง ...^000000";
+next;
+goto Main;
+
+NotUpitem:
+mes "^006611สถานะ^000000 : ^008080ยังไม่ได้เก็บ ผลผลิต จาก สัตว์เลี้ยง ...^000000";
+next;
+menu "-^006611 ทำการเก็บ ผลผลิต จาก สัตว์เลี้ยง^000000",-,"-^FF0000 ยังอะ^000000",exit;
+next;
+sleep2 3000;
+mes "^006611สถานะ^000000 : ^008080 ได้ผลผลิตเรียบร้อย แล้ว ...^000000";
+set #Sheep_Feed_Count,0;
+set #Sheep_Animal_Upitem,gettime(5);
+set #Status_Love_Sheep,#Status_Love_Sheep+3;
+getitem 16012,10;
+next;
+goto Main;
+
+Sheep_Sick:
+mes "^006611สถานะ^000000 : ^008080สุขภาพไม่ค่อยดี ...^000000";
+mes "^006611ความสะอาด^000000 : (^008080"+#Sheep_Clear+"/20^000000)";
+next;
+menu "-^FF0000 อืม..",exit,"-^006611 ใช้ยาบำรุง",-;
+next;
+if(countitem(16010) < 1) goto nottosick;
+set #Sheep_Clear,5;
+set #Status_Love_Sheep,#Status_Love_Sheep+5;
+delitem 16010,1;
+mes "^006611สถานะ^000000 : ^008080ใช้ยาช่วยบำรุง แล้ว ...^000000";
+next;
+goto Main;
+
+nottosick:
+mes "^006611สถานะ^000000 : ^008080คุณไม่มี ยาบำรุง ...^000000";
+next;
+goto Main;
+
+NotMain:
+mes "^006611สถานะ^000000 : ^008080คุณยังไม่ได้ซื้อสัตว์ไปเลี้ยงเลย ...^000000";
+close;
+
+exit:
+close;
+}

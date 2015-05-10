@@ -1,0 +1,365 @@
+//===== Developers Script ===================================
+//= House
+//===== Current Version =====================================
+//= 1.0
+//===== Description ========================================= 
+//= House
+//===== Additional Comments ================================= 
+//= 1.0 Start Version
+//= 1.1 Edit By pvp_moroccx
+//===========================================================
+//===== เริ่มบ้านหลังที่ 1
+pvp_morocc,114,186,3	script	100/1#home01r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 1,"100/1"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home01r")// {
+end;
+}
+pvp_morocc,117,181,4	script	เลขที่ 100/1#home01r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 1);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+
+//===== เริ่มบ้านหลังที่ 2
+pvp_morocc,121,186,3	script	100/2#home02r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 2,"100/2"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home02r")
+end;
+}
+pvp_morocc,123,181,4	script	เลขที่ 100/2#home02r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 2);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+
+//===== เริ่มบ้านหลังที่ 3
+pvp_morocc,127,186,3	script	100/3#home03r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 3,"100/3"); end;
+getmapxy( .@mapname3$, .@x, .@y, 0 );
+if (.@mapname3$ == "home03r")
+end;
+}
+pvp_morocc,130,181,4	script	เลขที่ 100/3#home03r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 3);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+
+//===== เริ่มบ้านหลังที่ 4
+pvp_morocc,133,186,3	script	100/4#home04r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 4,"100/4"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home04r")
+end;
+}
+pvp_morocc,136,181,4	script	เลขที่ 100/4#home04r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 4);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+
+//===== เริ่มบ้านหลังที่ 5
+pvp_morocc,140,186,3	script	100/5#home05r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 5,"100/5"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home05r")
+end;
+}
+pvp_morocc,143,181,4	script	เลขที่ 100/5#home05r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 5);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+
+//===== เริ่มบ้านหลังที่ 6
+pvp_morocc,146,186,3	script	100/6#home06r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 6,"100/6"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home06r")
+end;
+}
+pvp_morocc,149,181,4	script	เลขที่ 100/6#home06r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 6);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+
+//===== เริ่มบ้านหลังที่ 7
+pvp_morocc,152,186,3	script	100/7#home07r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 7,"100/7"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home07r")
+end;
+}
+pvp_morocc,155,181,4	script	เลขที่ 100/7#home07r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 7);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+
+//===== เริ่มบ้านหลังที่ 8
+pvp_morocc,167,186,3	script	100/8#home08r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 8,"100/8"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home08r")
+end;
+}
+pvp_morocc,163,181,4	script	เลขที่ 100/8#home08r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 8);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+//===== เริ่มบ้านหลังที่ 9
+pvp_morocc,173,186,3	script	100/9#home09r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 9,"100/9"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home09r")
+end;
+}
+pvp_morocc,170,181,4	script	เลขที่ 100/9#home09r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 9);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+//===== เริ่มบ้านหลังที่ 10
+pvp_morocc,179,186,3	script	100/10#home10r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 10,"100/10"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home10r")
+end;
+}
+pvp_morocc,176,181,4	script	เลขที่ 100/10#home10r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 10);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+//===== เริ่มบ้านหลังที่ 11
+pvp_morocc,185,186,3	script	100/11#home11r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 11,"100/11"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home11r")
+end;
+}
+pvp_morocc,182,181,4	script	เลขที่ 100/11#home11r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 11);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+
+//===== เริ่มบ้านหลังที่ 12
+pvp_morocc,192,186,3	script	100/12#home12r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 12,"100/12"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home12r")
+end;
+}
+pvp_morocc,189,181,4	script	เลขที่ 100/12#home12r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 12);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+
+//===== เริ่มบ้านหลังที่ 13
+pvp_morocc,198,186,3	script	100/13#home13r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 13,"100/13"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home13r")
+end;
+}
+pvp_morocc,195,181,4	script	เลขที่ 100/13#home13r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 13);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+
+//===== เริ่มบ้านหลังที่ 14
+pvp_morocc,204,186,3	script	100/14#home14r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 14,"100/14"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home14r")
+end;
+}
+pvp_morocc,201,181,4	script	เลขที่ 100/14#home14r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 14);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//=========================================================================
+
+
+//===== เริ่มบ้านหลังที่ 15
+pvp_morocc,114,165,3	script	100/15#home15r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 15,"100/15"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home15r")
+end;
+}
+pvp_morocc,117,170,0	script	เลขที่ 100/15#home15r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 15);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//===== จบบ้านหลังที่ 15
+
+
+//===== เริ่มบ้านหลังที่ 16
+pvp_morocc,121,165,3	script	100/16#home16r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 16,"100/16"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home16r")
+end;
+}
+pvp_morocc,124,170,0	script	เลขที่ 100/16#home16r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 16);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//===== จบบ้านหลังที่ 16
+
+
+//===== เริ่มบ้านหลังที่ 17
+pvp_morocc,127,165,3	script	100/17#home17r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 17,"100/17"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home17r")
+end;
+}
+pvp_morocc,130,170,0	script	เลขที่ 100/17#home17r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 17);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//===== จบบ้านหลังที่ 17
+
+
+//===== เริ่มบ้านหลังที่ 18
+pvp_morocc,133,164,3	script	100/18#home18r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 18,"100/18"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home18r")
+end;
+}
+pvp_morocc,136,170,0	script	เลขที่ 100/18#home18r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 18);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//===== จบบ้านหลังที่ 18
+
+
+//===== เริ่มบ้านหลังที่ 19
+pvp_morocc,140,165,3	script	100/19#home19r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 19,"100/19"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home19r")
+end;
+}
+pvp_morocc,143,170,0	script	เลขที่ 100/19#home19r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 19);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//===== จบบ้านหลังที่ 19
+
+
+//===== เริ่มบ้านหลังที่ 20
+pvp_morocc,179,165,3	script	100/20#home20r	45,1,1,{	// วาปหน้าบ้าน
+callfunc("F_House_Script", 20,"100/20"); end;
+getmapxy( .@mapname2$, .@x, .@y, 0 );
+if (.@mapname2$ == "home20r")
+end;
+}
+pvp_morocc,176,170,0	script	เลขที่ 100/20#home20r	722,{	// ธง
+end;
+OnTimer60000:
+callfunc("F_House_Flag", 20);
+setnpctimer 0; startnpctimer; end;
+OnInit:
+initnpctimer; end;
+}
+//===== จบบ้านหลังที่ 20

@@ -1,0 +1,73 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//// 				CREDIT SB-COLO					////
+////	 			SB-CENTER Service					////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//=========================================================
+// ติตต่อ  Admin  :: Sb center ได้ ที่  :: www.sb-center.in.th 
+//=========================================================
+
+new_morocc,146,102,4	script	Skill_HO	110,{
+mes "[Class Master]";
+mes "สวัสดี ท่าน [^FF0000 " + strcharinfo(0) + " ^000000]";
+mes "ข้าคือผู้ดูแลด้านอาชีพ";
+mes "เจ้าต้องการอะไร??";
+next;
+menu//"^bc8cbf- Skill เสริม^000000",F_skill,
+//"^ec008c- Skill Homunculus ^000000",skh,
+"^ec008c- ลบสเตตัส-รีสกิล ^000000",re;
+
+
+F_skill:
+	callfunc "F_Skill",1;
+end;
+
+
+skh:
+	callfunc "F_SkillHo",1;
+end;
+re:
+mes "[ลบสเตตัส-รีสกิล]";
+next;
+menu "ลบสเตตัส",ST,"รีสกิล",SK;
+
+SK:
+resetskill;
+close;
+ST:
+menu "Str -50",restr,"Agi -50",reagi,"Vit -50",revit,"Int -50",reint,"Dex -50",redex,"Luk -50",reluk;
+
+restr:
+atcommand "@str -50";
+close;
+
+reagi:
+atcommand "@agi -50";
+close;
+
+revit:
+atcommand "@vit -50";
+close;
+
+reint:
+atcommand "@int -50";
+close;
+
+redex:
+atcommand "@dex -50";
+close;
+
+reluk:
+atcommand "@luk -50";
+close;
+
+NeedZenys:
+mes "คุณมีเงินไม่พอครับ";
+close;
+
+LEnd:
+close;
+
+OnInit:
+waitingroom "ลบสเตตัส รีสกิล ที่นี่",0;
+end;
+}

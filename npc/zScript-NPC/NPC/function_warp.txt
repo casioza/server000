@@ -1,0 +1,129 @@
+//=============================================================
+//		-             Xtrap-Colo Scripts             -
+//=============================================================
+
+//========= PVP WARPER ==========
+function	script	pvp001	{
+mes "[ PVP WARPER ]";
+mes "กรุณาเลือกเมนูค่ะ";
+next;
+menu
+"^ff0000•^CC0033 - PVP Town                     [ "+getmapusers("pvp_y_1-2")+" ] คน.",map1,
+"^ff0000•^6600FF - Death Match                 [ "+getmapusers("guild_vs3")+" ] คน.",map2,
+"^ff0000•^009966 - Champion & Scholar     [ "+getmapusers("pvp_n_2-5")+" ] คน.",map3,
+"^ff0000•^CC9933 - Champion                     [ "+getmapusers("pvp_n_2-3")+" ] คน.",map4;
+
+	map1: 
+	sc_end SC_SERVICE4U;
+	sc_end SC_POEMBRAG;
+	warp "pvp_y_1-2",0,0;
+	close;
+
+	map2: 
+	sc_end SC_SERVICE4U;
+	sc_end SC_POEMBRAG;
+	warp "guild_vs3",0,0; 
+	close;
+
+	map3:
+	sc_end SC_POEMBRAGI;
+	sc_end SC_SERVICE4U;
+	if (BaseJob == Job_Sage || BaseJob == Job_Monk) {
+	if (getmapusers("pvp_n_2-5") < 1000) warp "pvp_n_2-5",0,0;
+	}
+	close;
+
+	map4:
+	sc_end SC_POEMBRAGI;
+	sc_end SC_SERVICE4U;
+	if (BaseJob == Job_Monk) {
+	if (getmapusers("pvp_n_2-3") < 1000) warp "pvp_n_2-3",0,0;
+	}
+	close;
+	} 
+
+//==================== Guild WARP
+function	script	gvg001	{
+
+	mes "[ GVG WARPER ]";
+	mes "กรุณาเลือกเมนูค่ะ";
+	next;
+	menu "^FF0000[ "+getmapusers("aldeg_cas04.gat")+" ]^000000 - ตะลุมบอน ( เปิดทุกวอ )",map1,
+	"^FF0000[ "+getmapusers("payg_cas04.gat")+" ]^000000 - Sacred Altar",map2,
+	"^FF0000[ "+getmapusers("prtg_cas03.gat")+" ]^000000 - Fadhgridh",map3,
+	"^FF0000[ "+getmapusers("gefg_cas04.gat")+" ]^000000 - Bergel",map4,
+	"^FF0000[ "+getmapusers("payg_cas01.gat")+" ]^000000 - Bright Arbor",map5,
+	"^FF0000[ "+getmapusers("gefg_cas01.gat")+" ]^000000 - Repherion",map6,
+	"^FF0000[ "+getmapusers("payg_cas03.gat")+" ]^000000 - Holy Shadow",map7,
+	"^FF0000[ "+getmapusers("gefg_cas02.gat")+" ]^000000 - Eeyolbriggar",map8,
+	"^FF0000[ "+getmapusers("aldeg_cas05.gat")+" ]^000000 - Rothenburg",map9,
+	"^FF0000[ "+getmapusers("aldeg_cas03.gat")+" ]^000000 - Nuenburg",map10,
+	"^FF0000[ "+getmapusers("prtg_cas04.gat")+" ]^000000 - Skoegul",map11,
+	"^FF0000[ "+getmapusers("prtg_cas01.gat")+" ]^000000 - สำหรับ BaBy",map12;
+
+map1:
+	warp "alde_gld.gat",235,243;
+	close;
+map2:
+	warp "pay_gld.gat",140,165;
+	close;
+map3:
+	warp "prt_gld.gat",153,134;
+	close;
+map4:
+	warp "gef_fild13.gat",191,276;
+	close;
+map5:
+	warp "pay_gld.gat",121,233;
+	close;
+map6:
+	warp "gef_fild13.gat",156,48;
+	close;
+map7:
+	warp "pay_gld.gat",312,294;
+	close;
+map8:
+	warp "gef_fild13.gat",308,237;
+	close;
+map9:
+	warp "alde_gld.gat",270,90;
+	close;
+map10:
+	warp "alde_gld.gat",141,89;
+	close;
+map11:
+	warp "prt_gld.gat",118,239;
+	close;
+map12:
+	warp "prt_gld.gat",142,65;
+	close;
+}
+
+//==================== 1-1  Guild  WARP ====================
+function	script	gvgwarp11	{
+	mes "[ Guild vs Guild - WARP ]";
+	mes "กรุณาเลือกเมนูค่ะ";
+	next;
+	menu "^FF0000[ "+getmapusers("guildvs01.gat")+" ]^000000 - บ้านไทย",mapz1,
+"^FF0000[ "+getmapusers("guildvs02.gat")+" ]^000000 - บ้านลาว",mapz2,
+"^FF0000[ "+getmapusers("guildvs03.gat")+" ]^000000 - บ้านพม่า",mapz3,
+"^FF0000[ "+getmapusers("guildvs04.gat")+" ]^000000 - บ้านเขมร ( 22 คน )",mapz4,
+"^FF0000[ "+getmapusers("guildvs05.gat")+" ]^000000 - บ้านกัมพูชา ( 22 คน )",mapz5;
+
+mapz1:
+	warp "yuno.gat",157,312;
+	close;
+mapz2:
+	warp "yuno.gat",278,285;
+	close;
+mapz3:
+	warp "yuno.gat",324,278;
+	close;
+mapz4:
+	warp "yuno.gat",92,317;
+	close;
+mapz5:
+	warp "yuno.gat",278,104;
+	close;
+	}
+

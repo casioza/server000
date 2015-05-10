@@ -1,0 +1,42 @@
+-	script	CELLPVP	-1,{
+OnInit:
+setcell "new_morocc",160,76,178,66,cell_pvp,1;//��ҧ���ͧ
+end;
+}
+
+-	script	CELLPVP2	858,{close;}
+//===================================
+//	��ҧ���ͧ
+//===================================
+//   �����
+new_morocc,160,76,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-1	858
+new_morocc,160,74,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-2	858
+new_morocc,160,72,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-3	858
+new_morocc,160,70,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-4	858
+new_morocc,160,68,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-5	858
+new_morocc,160,66,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-6	858
+
+new_morocc,162,76,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-7	858
+new_morocc,164,76,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-8	858
+new_morocc,166,76,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-9	858
+new_morocc,168,76,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-10	858
+new_morocc,170,76,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-11	858
+new_morocc,172,76,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-12	858
+new_morocc,174,76,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-13	858
+new_morocc,176,76,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-14	858
+
+new_morocc,178,76,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-15	858
+new_morocc,178,74,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-16	858
+new_morocc,178,72,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-17	858
+new_morocc,178,70,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-18	858
+new_morocc,178,68,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-19	858
+new_morocc,178,66,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-20	858
+
+new_morocc,162,66,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-21	858
+new_morocc,164,66,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-22	858
+new_morocc,166,66,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-23	858
+new_morocc,168,66,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-24	858
+new_morocc,170,66,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-25	858
+new_morocc,172,66,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-26	858
+new_morocc,174,66,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-27	858
+new_morocc,176,66,5	duplicate(CELLPVP2)	ࢵ PVP#cellpvp-28	858

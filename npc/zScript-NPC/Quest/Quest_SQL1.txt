@@ -1,0 +1,134 @@
+-	script	hatt1	-1,{
+query_sql "SELECT * FROM `hat_hattero1` WHERE `o2itemmain`>'0' limit 50",$@hattero1_o2itemmain,$@hattero1_o2money,$@hattero1_o2item1,$@hattero1_o2amount1,$@hattero1_o2item2,$@hattero1_o2amount2,$@hattero1_o2item3,$@hattero1_o2amount3,$@hattero1_o2item4,$@hattero1_o2amount4,$@hattero1_o2item5,$@hattero1_o2amount5,$@hattero1_o2item6,$@hattero1_o2amount6,$@hattero1_o2item7,$@hattero1_o2amount7,$@hattero1_o2item8,$@hattero1_o2amount8,$@hattero1_o2item9,$@hattero1_o2amount9,$@hattero1_o2item10,$@hattero1_o2amount10,$@hattero1_o2item11,$@hattero1_o2amount11,$@hattero1_o2item12,$@hattero1_o2amount12;
+set $@hattero1_size,getarraysize($@hattero1_o2itemmain);
+npcshopitem "Tool3Windows", $@hattero1_o2itemmain[0],$@hattero1_o2money[0],$@hattero1_o2itemmain[1],$@hattero1_o2money[1],$@hattero1_o2itemmain[2],$@hattero1_o2money[2],$@hattero1_o2itemmain[3],$@hattero1_o2money[3],$@hattero1_o2itemmain[4],$@hattero1_o2money[4],$@hattero1_o2itemmain[5],$@hattero1_o2money[5],$@hattero1_o2itemmain[6],$@hattero1_o2money[6],$@hattero1_o2itemmain[7],$@hattero1_o2money[7],$@hattero1_o2itemmain[8],$@hattero1_o2money[8],$@hattero1_o2itemmain[9],$@hattero1_o2money[9],$@hattero1_o2itemmain[10],$@hattero1_o2money[10],$@hattero1_o2itemmain[11],$@hattero1_o2money[11]
+,$@hattero1_o2itemmain[12],$@hattero1_o2money[12],$@hattero1_o2itemmain[13],$@hattero1_o2money[13],$@hattero1_o2itemmain[14],$@hattero1_o2money[14],$@hattero1_o2itemmain[15],$@hattero1_o2money[15],$@hattero1_o2itemmain[16],$@hattero1_o2money[16],$@hattero1_o2itemmain[17],$@hattero1_o2money[17],$@hattero1_o2itemmain[18],$@hattero1_o2money[18],$@hattero1_o2itemmain[19],$@hattero1_o2money[19],$@hattero1_o2itemmain[20],$@hattero1_o2money[20],$@hattero1_o2itemmain[21],$@hattero1_o2money[21],$@hattero1_o2itemmain[22],$@hattero1_o2money[22],$@hattero1_o2itemmain[23],$@hattero1_o2money[23]
+,$@hattero1_o2itemmain[24],$@hattero1_o2money[24],$@hattero1_o2itemmain[25],$@hattero1_o2money[25],$@hattero1_o2itemmain[26],$@hattero1_o2money[26],$@hattero1_o2itemmain[27],$@hattero1_o2money[27],$@hattero1_o2itemmain[28],$@hattero1_o2money[28],$@hattero1_o2itemmain[29],$@hattero1_o2money[29],$@hattero1_o2itemmain[30],$@hattero1_o2money[30],$@hattero1_o2itemmain[31],$@hattero1_o2money[31],$@hattero1_o2itemmain[32],$@hattero1_o2money[32],$@hattero1_o2itemmain[33],$@hattero1_o2money[33],$@hattero1_o2itemmain[34],$@hattero1_o2money[34],$@hattero1_o2itemmain[35],$@hattero1_o2money[35]
+,$@hattero1_o2itemmain[36],$@hattero1_o2money[36],$@hattero1_o2itemmain[37],$@hattero1_o2money[37],$@hattero1_o2itemmain[38],$@hattero1_o2money[38],$@hattero1_o2itemmain[39],$@hattero1_o2money[39],$@hattero1_o2itemmain[40],$@hattero1_o2money[40],$@hattero1_o2itemmain[41],$@hattero1_o2money[41],$@hattero1_o2itemmain[42],$@hattero1_o2money[42],$@hattero1_o2itemmain[43],$@hattero1_o2money[43],$@hattero1_o2itemmain[44],$@hattero1_o2money[44],$@hattero1_o2itemmain[45],$@hattero1_o2money[45],$@hattero1_o2itemmain[46],$@hattero1_o2money[46],$@hattero1_o2itemmain[47],$@hattero1_o2money[47]
+,$@hattero1_o2itemmain[48],$@hattero1_o2money[48],$@hattero1_o2itemmain[49],$@hattero1_o2money[49];
+sleep2 100;
+callshop "Tool3Windows",1;
+npcshopattach "Tool3Windows";
+end;
+
+OnBuyItem:
+
+for(set @j,0; @j < getarraysize(@bought_nameid);set @j,@j+1){
+set @check_loop,0;
+for(set @i,0; @i < $@hattero1_size&&@check_loop==0; set @i,@i+1){
+if(@bought_nameid[@j]==$@hattero1_o2itemmain[@i])
+set @check_loop,1;
+
+}
+set @i,@i-1;
+dispbottom "[ "+getitemname($@hattero1_o2itemmain[@i])+" ] : ";
+dispbottom "================================";
+if($@hattero1_o2money[@i]>0)dispbottom "ใช้เงิน [ "+$@hattero1_o2money[@i]+" ] zeny.";
+if($@hattero1_o2amount1[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item1[@i])+" ["+getitemSlots($@hattero1_o2item1[@i])+"] จำนวน "+$@hattero1_o2amount1[@i]+" ชิ้น";
+if($@hattero1_o2amount2[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item2[@i])+" ["+getitemSlots($@hattero1_o2item2[@i])+"] จำนวน "+$@hattero1_o2amount2[@i]+" ชิ้น";
+if($@hattero1_o2amount3[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item3[@i])+" ["+getitemSlots($@hattero1_o2item3[@i])+"] จำนวน "+$@hattero1_o2amount3[@i]+" ชิ้น";
+if($@hattero1_o2amount4[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item4[@i])+" ["+getitemSlots($@hattero1_o2item4[@i])+"] จำนวน "+$@hattero1_o2amount4[@i]+" ชิ้น";
+if($@hattero1_o2amount5[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item5[@i])+" ["+getitemSlots($@hattero1_o2item5[@i])+"] จำนวน "+$@hattero1_o2amount5[@i]+" ชิ้น";
+if($@hattero1_o2amount6[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item6[@i])+" ["+getitemSlots($@hattero1_o2item6[@i])+"] จำนวน "+$@hattero1_o2amount6[@i]+" ชิ้น";
+if($@hattero1_o2amount7[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item7[@i])+" ["+getitemSlots($@hattero1_o2item7[@i])+"] จำนวน "+$@hattero1_o2amount7[@i]+" ชิ้น";
+if($@hattero1_o2amount8[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item8[@i])+" ["+getitemSlots($@hattero1_o2item8[@i])+"] จำนวน "+$@hattero1_o2amount8[@i]+" ชิ้น";
+if($@hattero1_o2amount9[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item9[@i])+" ["+getitemSlots($@hattero1_o2item9[@i])+"] จำนวน "+$@hattero1_o2amount9[@i]+" ชิ้น";
+if($@hattero1_o2amount10[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item10[@i])+" ["+getitemSlots($@hattero1_o2item10[@i])+"] จำนวน "+$@hattero1_o2amount10[@i]+" ชิ้น";
+if($@hattero1_o2amount11[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item11[@i])+" ["+getitemSlots($@hattero1_o2item11[@i])+"] จำนวน "+$@hattero1_o2amount11[@i]+" ชิ้น";
+if($@hattero1_o2amount12[@i]>0)dispbottom "ใช้ "+getitemname($@hattero1_o2item12[@i])+" ["+getitemSlots($@hattero1_o2item12[@i])+"] จำนวน "+$@hattero1_o2amount12[@i]+" ชิ้น";
+dispbottom "================================";
+if(Zeny<$@hattero1_o2money[@i])
+goto L_Pass;
+if($@hattero1_o2item1[@i]!=0){
+if(countitem($@hattero1_o2item1[@i])<$@hattero1_o2amount1[@i])
+goto L_Pass;
+}
+if($@hattero1_o2item2[@i]!=0){
+if(countitem($@hattero1_o2item2[@i])<$@hattero1_o2amount2[@i])
+goto L_Pass;
+}
+if($@hattero1_o2item3[@i]!=0){
+if(countitem($@hattero1_o2item3[@i])<$@hattero1_o2amount3[@i])
+goto L_Pass;
+}
+if($@hattero1_o2item4[@i]!=0){
+if(countitem($@hattero1_o2item4[@i])<$@hattero1_o2amount4[@i])
+goto L_Pass;
+}
+if($@hattero1_o2item5[@i]!=0){
+if(countitem($@hattero1_o2item5[@i])<$@hattero1_o2amount5[@i])
+goto L_Pass;
+}
+if($@hattero1_o2item6[@i]!=0){
+if(countitem($@hattero1_o2item6[@i])<$@hattero1_o2amount6[@i])
+goto L_Pass;
+}
+if($@hattero1_o2item7[@i]!=0){
+if(countitem($@hattero1_o2item7[@i])<$@hattero1_o2amount7[@i])
+goto L_Pass;
+}
+if($@hattero1_o2item8[@i]!=0){
+if(countitem($@hattero1_o2item8[@i])<$@hattero1_o2amount8[@i])
+goto L_Pass;
+}
+if($@hattero1_o2item9[@i]!=0){
+if(countitem($@hattero1_o2item9[@i])<$@hattero1_o2amount9[@i])
+goto L_Pass;
+}
+if($@hattero1_o2item10[@i]!=0){
+if(countitem($@hattero1_o2item11[@i])<$@hattero1_o2amount11[@i])
+goto L_Pass;
+}
+if($@hattero1_o2item11[@i]!=0){
+if(countitem($@hattero1_o2item11[@i])<$@hattero1_o2amount11[@i])
+goto L_Pass;
+}
+if($@hattero1_o2item12[@i]!=0){
+if(countitem($@hattero1_o2item12[@i])<$@hattero1_o2amount12[@i])
+goto L_Pass;
+}
+if($@hattero2_o2item1[@i]!=0) delitem $@hattero1_o2item1[@i],$@hattero2_o2amount1[@i];
+if($@hattero2_o2item2[@i]!=0) delitem $@hattero1_o2item2[@i],$@hattero2_o2amount2[@i];
+if($@hattero2_o2item3[@i]!=0)delitem $@hattero1_o2item3[@i],$@hattero2_o2amount3[@i];
+if($@hattero2_o2item4[@i]!=0)delitem $@hattero1_o2item4[@i],$@hattero2_o2amount4[@i];
+if($@hattero2_o2item5[@i]!=0)delitem $@hattero1_o2item5[@i],$@hattero2_o2amount5[@i];
+if($@hattero2_o2item6[@i]!=0)delitem $@hattero1_o2item6[@i],$@hattero2_o2amount6[@i];
+if($@hattero2_o2item7[@i]!=0)delitem $@hattero1_o2item7[@i],$@hattero2_o2amount7[@i];
+if($@hattero2_o2item8[@i]!=0)delitem $@hattero1_o2item8[@i],$@hattero2_o2amount8[@i];
+if($@hattero2_o2item9[@i]!=0)delitem $@hattero1_o2item9[@i],$@hattero2_o2amount9[@i];
+if($@hattero2_o2item10[@i]!=0)delitem $@hattero1_o2item10[@i],$@hattero2_o2amount10[@i];
+if($@hattero2_o2item11[@i]!=0)delitem $@hattero1_o2item11[@i],$@hattero2_o2amount11[@i];
+if($@hattero2_o2item12[@i]!=0)delitem $@hattero1_o2item12[@i],$@hattero2_o2amount12[@i];
+getitem $@hattero1_o2itemmain[@i],1;
+dispbottom "[ >> คุณได้รับของเรียบร้อยแล้ว << ]";
+dispbottom "================================";
+dispbottom " ";
+}
+deletearray @bought_nameid, getarraysize(@bought_nameid);
+set @bought_nameid,0;
+end;
+
+L_Pass:
+dispbottom "[ >> คุณมีของไม่ครบ โปรดกลับมาใหม่เมื่อมีของครบ << ]";
+dispbottom "================================";
+dispbottom " ";
+deletearray @bought_nameid, getarraysize(@bought_nameid);
+set @bought_nameid,0;
+end;
+}
+
+-	script	ColorWindows	-1,{
+OnInit:
+query_sql "SELECT * FROM `hat_hattero1` WHERE `o2itemmain`>'0' limit 50",$@hattero1_o2itemmain,$@hattero1_o2money,$@hattero1_o2item1,$@hattero1_o2amount1,$@hattero1_o2item2,$@hattero1_o2amount2,$@hattero1_o2item3,$@hattero1_o2amount3,$@hattero1_o2item4,$@hattero1_o2amount4,$@hattero1_o2item5,$@hattero1_o2amount5,$@hattero1_o2item6,$@hattero1_o2amount6,$@hattero1_o2item7,$@hattero1_o2amount7,$@hattero1_o2item8,$@hattero1_o2amount8,$@hattero1_o2item9,$@hattero1_o2amount9,$@hattero1_o2item10,$@hattero1_o2amount10,$@hattero1_o2item11,$@hattero1_o2amount11,$@hattero1_o2item12,$@hattero1_o2amount12;
+set $@hattero1_size,getarraysize($@hattero1_o2itemmain);
+npcshopitem "Tool3Windows", $@hattero1_o2itemmain[0],$@hattero1_o2money[0],$@hattero1_o2itemmain[1],$@hattero1_o2money[1],$@hattero1_o2itemmain[2],$@hattero1_o2money[2],$@hattero1_o2itemmain[3],$@hattero1_o2money[3],$@hattero1_o2itemmain[4],$@hattero1_o2money[4],$@hattero1_o2itemmain[5],$@hattero1_o2money[5],$@hattero1_o2itemmain[6],$@hattero1_o2money[6],$@hattero1_o2itemmain[7],$@hattero1_o2money[7],$@hattero1_o2itemmain[8],$@hattero1_o2money[8],$@hattero1_o2itemmain[9],$@hattero1_o2money[9],$@hattero1_o2itemmain[10],$@hattero1_o2money[10],$@hattero1_o2itemmain[11],$@hattero1_o2money[11]
+,$@hattero1_o2itemmain[12],$@hattero1_o2money[12],$@hattero1_o2itemmain[13],$@hattero1_o2money[13],$@hattero1_o2itemmain[14],$@hattero1_o2money[14],$@hattero1_o2itemmain[15],$@hattero1_o2money[15],$@hattero1_o2itemmain[16],$@hattero1_o2money[16],$@hattero1_o2itemmain[17],$@hattero1_o2money[17],$@hattero1_o2itemmain[18],$@hattero1_o2money[18],$@hattero1_o2itemmain[19],$@hattero1_o2money[19],$@hattero1_o2itemmain[20],$@hattero1_o2money[20],$@hattero1_o2itemmain[21],$@hattero1_o2money[21],$@hattero1_o2itemmain[22],$@hattero1_o2money[22],$@hattero1_o2itemmain[23],$@hattero1_o2money[23]
+,$@hattero1_o2itemmain[24],$@hattero1_o2money[24],$@hattero1_o2itemmain[25],$@hattero1_o2money[25],$@hattero1_o2itemmain[26],$@hattero1_o2money[26],$@hattero1_o2itemmain[27],$@hattero1_o2money[27],$@hattero1_o2itemmain[28],$@hattero1_o2money[28],$@hattero1_o2itemmain[29],$@hattero1_o2money[29],$@hattero1_o2itemmain[30],$@hattero1_o2money[30],$@hattero1_o2itemmain[31],$@hattero1_o2money[31],$@hattero1_o2itemmain[32],$@hattero1_o2money[32],$@hattero1_o2itemmain[33],$@hattero1_o2money[33],$@hattero1_o2itemmain[34],$@hattero1_o2money[34],$@hattero1_o2itemmain[35],$@hattero1_o2money[35]
+,$@hattero1_o2itemmain[36],$@hattero1_o2money[36],$@hattero1_o2itemmain[37],$@hattero1_o2money[37],$@hattero1_o2itemmain[38],$@hattero1_o2money[38],$@hattero1_o2itemmain[39],$@hattero1_o2money[39],$@hattero1_o2itemmain[40],$@hattero1_o2money[40],$@hattero1_o2itemmain[41],$@hattero1_o2money[41],$@hattero1_o2itemmain[42],$@hattero1_o2money[42],$@hattero1_o2itemmain[43],$@hattero1_o2money[43],$@hattero1_o2itemmain[44],$@hattero1_o2money[44],$@hattero1_o2itemmain[45],$@hattero1_o2money[45],$@hattero1_o2itemmain[46],$@hattero1_o2money[46],$@hattero1_o2itemmain[47],$@hattero1_o2money[47]
+,$@hattero1_o2itemmain[48],$@hattero1_o2money[48],$@hattero1_o2itemmain[49],$@hattero1_o2money[49];
+end;
+}
+
+-	shop	Tool3Windows	-1,502:-1 
+
+

@@ -1,0 +1,129 @@
+//===== CyberExtend Script ====================================
+//= Item War
+//===== Current Version: ======================================
+//= 1.0
+//===== Description: ========================================= 
+//= npc แจก item วอ
+//===== Additional Comments: ================================= 
+//= 1.0 Start Version
+//==========================================================
+/*
+
+//--------------------------------------------------------------------------Config Zone----------------------------------------------------------------------------
+// ไม่ใช้ในส่วนนี้แล้ว
+	set @npcname$, "[ แจกของรางวัล Guildwars ]";	// ตั้งชื่อ npc
+	//กำหนดแมพบ้านที่จะเปิดตรงนี้นะคับ
+	set @castle1$,"aldeg_cas01";			//ตั้งเฉพาะบ้าน Aldebaran นะคับ
+	set @castle2$,"aldeg_cas02";			//ตั้งเฉพาะบ้าน Aldebaran นะคับ
+	set @castle3$,"aldeg_cas03";			//ตั้งเฉพาะบ้าน Aldebaran นะคับ
+	set @castle4$,"aldeg_cas04";			//ตั้งเฉพาะบ้าน Aldebaran นะคับ
+	set @castle5$,"aldeg_cas05";			//ตั้งเฉพาะบ้าน Aldebaran นะคับ
+	set @castle6$,"payg_cas01";			//ตั้งเฉพาะบ้าน Payon นะคับ
+	set @castle7$,"payg_cas02";			//ตั้งเฉพาะบ้าน Payon นะคับ
+	set @castle8$,"payg_cas03";			//ตั้งเฉพาะบ้าน Payon นะคับ
+	set @castle9$,"payg_cas04";			//ตั้งเฉพาะบ้าน Payon นะคับ
+	set @castle10$,"payg_cas05";			//ตั้งเฉพาะบ้าน Payon นะคับ
+	set @castle11$,"prtg_cas01";			//ตั้งเฉพาะบ้าน Prontera นะคับ
+	set @castle12$,"prtg_cas02";			//ตั้งเฉพาะบ้าน Prontera นะคับ
+	set @castle13$,"prtg_cas03";			//ตั้งเฉพาะบ้าน Prontera นะคับ
+	set @castle14$,"prtg_cas04";			//ตั้งเฉพาะบ้าน Prontera นะคับ
+	set @castle15$,"prtg_cas05";			//ตั้งเฉพาะบ้าน Prontera นะคับ
+	set @castle16$,"gefg_cas01";			//ตั้งเฉพาะบ้าน Gefen นะคับ
+	set @castle17$,"gefg_cas02";			//ตั้งเฉพาะบ้าน Gefen นะคับ
+	set @castle18$,"gefg_cas03";			//ตั้งเฉพาะบ้าน Gefen นะคับ
+	set @castle19$,"gefg_cas04";			//ตั้งเฉพาะบ้าน Gefen นะคับ
+	set @castle20$,"gefg_cas05";			//ตั้งเฉพาะบ้าน Gefen นะคับ
+
+	set @castleps$,"prtg_cas01";		//บ้านพิเศษ  หากเลือกบ้าน payon ก็ ตั้งเป็น set @castleps$,@castle2$;	
+	set @gvgitemps,0 ;			//ของแจกพิเศษ
+	set @gvgitemcountps,0 ;			//จำนวนของพิเศษ
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+-	script	itemgvg	-1,{
+	mes @npcname$;
+	if (agitcheck()) {
+		mes "ข้าจะแจกของรางวัลก็ต่อเมื่อกิลวอจบ";
+		mes "แล้วเท่านั้น";
+		close;
+	}
+	mes "สวัสดีจ้า มีอะไรให้ช่วยไหม ?";
+	next;
+	set .@t_mnu$,"";
+	for (set @i,0 ; @i < getarraysize($agitname$) ; set @i,@i+1){
+		if (!$agitwar[@i]) set .@t_mnu$,.@t_mnu$+":";
+		else set .@t_mnu$,.@t_mnu$+"รับของรางวัล "+getcastlename($agitname$[@i])+":";
+	}
+	set .@mnu,select(.@t_mnu$);
+
+	set @GID,getcastledata($agitname$[.@mnu-1],1);	
+	set @castleselect$,$agitname$[.@mnu-1];
+	if (getguildmaster(@GID) == "null") 
+	{
+		mes "[ แจกของรางวัล Guildwars ]";
+		mes "ปราสาทนี้ยังไม่มีใครเป็นเจ้าของ";
+		close;
+	}
+
+	if (strcharinfo(0) == getguildmaster(@GID))
+	{
+		query_sql "SELECT `used` FROM `guild_rank` WHERE `name` = '"+@castleselect$+"' ", @used$;
+		if(@used$ == "0") {
+			mes "[ แจกของรางวัล Guildwars ]";
+			mes "ท่าน GuildMaster";
+			mes "^ff0000[" + getguildmaster(@GID) + "]^000000";
+			set @weiuser,0 ;
+			for (set @i,0;@i<getarraysize(@gvgitem);set @i,@i+1)
+				set @weiuser,@weiuser+getiteminfo(@gvgitem[@i],6);
+			if (@weiuser > (MaxWeight-Weight) )
+			{
+				mes "คุณแบกน้ำหนักมากเกินกว่าที่จะรับของได้";
+				close;
+			}
+			mes "ดิฉันจะมอบของรางวัลให้ท่าน ";
+			mes "เงิน "+ $gvgitem[0] +"M zeny";
+			set Zeny,zeny+$gvgitem[0]*1000000;
+			mes "และ";
+			for (set @i,1;@i<getarraysize($gvgitem);set @i,@i+2)
+			{
+				if ($gvgitem[@i] && $gvgitem[@i+1])
+					mes getitemname($gvgitem[@i]) + " จำนวน " +$gvgitem[@i+1] + " ea";
+					getitem $gvgitem[@i],$gvgitem[@i+1];
+			}
+
+/*			if ( @castleselect$ == @castleps$)
+			{
+				mes "รางวัลพิเศษสำหรับผู้ปกครองบ้านหลังนี้ ";
+				mes getitemname(@gvgitemps)+" จำนวน "+@gvgitemcountps+" ea";
+				getitem @gvgitemps,@gvgitemcountps;
+			}
+*/
+			query_sql "UPDATE `guild_rank` SET `used` = '1' WHERE `name` = '"+@castleselect$+"' ";
+			close;
+		}
+
+		if(@used$ == "1") {
+			mes "[ แจกของรางวัล Guildwars ]";
+			mes "ท่าน GuildMaster";
+			mes "^ff0000[" + getguildmaster(@GID) + "]^000000";
+			mes "ได้รับของรางวัลไปแล้ว";
+			mes "โปรดติดต่อมาใหม่ในภายหลัง";
+			close;
+		}
+	}
+	else{
+	mes "[ แจกของรางวัล Guildwars ]";
+	mes "ขออภัยด้วย แต่ดิฉันจะมอบให้เฉพาะ";
+	mes "ท่าน GuildMaster ที่ชื่อ";
+	mes "^ff0000[" + getguildmaster(@GID) + "]^000000";
+	mes "เท่านั้น โปรดติดต่อมาภายหลัง";
+	close;
+	}
+
+OnAgitStart:
+	query_sql "UPDATE `guild_rank` SET `used` = '0'";
+	end;
+	
+OnInit: 
+	waitingroom "รับของรางวัล GuildWar",0; 
+end;
+}

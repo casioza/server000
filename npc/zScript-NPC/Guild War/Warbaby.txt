@@ -1,0 +1,56 @@
+//=============================================================
+//		-             Xtrap-Colo Scripts             -
+//=============================================================
+
+-	script	Baby Class	-1,{
+end;
+
+OnPCLoadMapEVent:
+	for(set .@i,0; .@i < getarraysize(.maps$); set .@i,.@i+1)
+	{
+		if(strcharinfo(3) == .maps$[.@i])
+		{
+			for(set .@j,0; .@j < getarraysize(.allowclass); set .@j,.@j+1)
+			{
+				if(Class == .allowclass[.@j])
+				end;
+			}
+			dispbottom "บ้านหลังนี้ เฉพาะ Baby Class เท่านั้น !!";
+			warp "SavePoint",0,0;
+			end;
+		}
+	}
+	end;
+    
+OnInit:
+	// ใส่แมพบ้านวอที่เราต้องการใช้วอ Baby
+	setarray .maps$[0],
+	"prtg_cas01";
+
+	// เลขอาชีพที่สามารถเข้าบ้าน ตามที่กำหนดด้านบนได้
+	setarray .allowclass[0],
+		4023,
+		4024,
+		4025,
+		4026,
+		4027,
+		4028,
+		4029,
+		4030,
+		4031,
+		4032,
+		4033,
+		4034,
+		4035,
+		4037,
+		4038,
+		4039,
+		4040,
+		4041,
+		4042,
+		4043,
+		4045;
+	end;
+}
+
+prtg_cas01	mapflag	loadevent

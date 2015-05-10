@@ -1,0 +1,22 @@
+//=============================================================
+//		-             Xtrap-Colo Scripts             -
+//=============================================================
+new_1-1,68,111,0	script	ออกจากที่นี่	45,2,2,{
+//ไอเท็มแจกตอนเข้าเมือง
+getitem 29400,1;
+getitem 29401,1;
+getitem 29402,1;
+query_sql "INSERT INTO `pvp_rank` (`char_id`,`kill`,`death`) VALUES ('"+getcharid(0)+"', '0', '0')";
+warp "new_morocc",159,95;
+savepoint "new_morocc",159,95;
+end;
+}
+
+new_1-1,49,110,0,0	monster	Roda Frog	1012,12,0,0,0
+new_1-1,49,110,0,0	monster	Poporing	1031,8,0,0,0
+new_1-1,49,110,0,0	monster	Willow	1010,6,0,0,0
+new_1-1,49,110,0,0	monster	Poring	1002,15,0,0,0
+new_1-1,49,110,0,0	monster	Spore	1014,10,0,0,0
+
+
+new_1-1,63,115,5	duplicate(healabmain2)	Buff#555	650

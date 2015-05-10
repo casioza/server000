@@ -1,0 +1,193 @@
+//===== Developers Script ===================================
+//= Control Guild War Normal
+//===== Current Version =====================================
+//= 1.0
+//===== Description ========================================= 
+//= Control Guild War Normal
+//===== Additional Comments ================================= 
+//= 1.0 Start Version
+//= 1.1 Edit By Xtrap-COLO
+//===========================================================
+
+-	script	WARTIME01	-1,{
+OnGVGSTART:
+AgitStart;
+Announce "สงคราม Guild War Of Emperium ได้เริ่มต้นขึ้นแล้ว",8;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 59 นาที 59 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 59 นาที 58 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 59 นาที 57 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 59 นาที 56 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 59 นาที 55 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 59 นาที 54 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 59 นาที 53 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 59 นาที 52 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 59 นาที 51 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 59 นาที 50 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เวลาจะนับถอยหลังไปเรื่อยๆจนกว่าจะครบ 1 ชั่วโมง !!",bc_all,0x00EE00;
+sleep2 290000;
+Announce "Guild War เหลือเวลาอีก 55 นาที",bc_all,0x00EE00;
+sleep2 600000;
+Announce "Guild War เหลือเวลาอีก 45 นาที",bc_all,0x00EE00;
+sleep2 600000;
+Announce "Guild War เหลือเวลาอีก 35 นาที",bc_all,0x00EE00;
+sleep2 600000;
+Announce "Guild War เหลือเวลาอีก 25 นาที",bc_all,0x00EE00;
+sleep2 600000;
+Announce "Guild War เหลือเวลาอีก 15 นาที",bc_all,0x00EE00;
+sleep2 300000;
+Announce "Guild War เหลือเวลาอีก 10 นาที",bc_all,0x00EE00;
+sleep2 300000;
+Announce "Guild War เหลือเวลาอีก 5 นาที",bc_all,0x00EE00;
+sleep2 60000;
+Announce "Guild War เหลือเวลาอีก 4 นาที",bc_all,0x00EE00;
+sleep2 60000;
+Announce "Guild War เหลือเวลาอีก 3 นาที",bc_all,0x00EE00;
+sleep2 60000;
+Announce "Guild War เหลือเวลาอีก 2 นาที",bc_all,0x00EE00;
+sleep2 60000;
+Announce "Guild War เหลือเวลาอีก 1 นาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 59 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 58 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 57 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 56 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 55 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 54 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 53 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 52 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 51 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 50 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 49 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 48 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 47 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 46 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 45 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 44 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 43 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 42 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 41 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 40 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 39 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 38 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 37 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 36 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 35 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 34 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 33 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 32 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 31 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 30 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 29 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 28 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 27 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 26 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 25 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 24 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 23 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 22 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 21 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 20 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 19 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 18 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 17 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 16 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 15 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 14 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 13 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 12 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 11 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 10 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 9 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 8 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 7 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 6 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 5 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 4 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 6 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 2 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "Guild War เหลือเวลาอีก 1 วินาที",bc_all,0x00EE00;
+sleep2 1000;
+Announce "สงคราม Guild Vs Guild ได้สิ้นสุดลงแล้ว",bc_all,0x00EE00;
+AgitEnd;
+end;
+}
+
+-	script	war	-1,{
+OnWhisperGlobal:
+if(getgmlevel() < 99) end;
+if(@whispervar0$ == "1")
+donpcevent "WARTIME01::OnGVGSTART";
+end;
+OnInit:
+end;
+}
+

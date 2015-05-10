@@ -1,0 +1,26 @@
+-	script	Online Bonus	-1,{
+OnInIt:
+	set .time_count, 60;	// ออนไลน์นานเท่าไหร่ จึงจะได้ Cash (นาที)
+	//set .cash, 100000;		// จำนวน Cash ที่ได้เมื่อออนไลน์ครบตามเวลาที่กำหนด
+	end;
+
+OnPCLoginEvent:
+	initnpctimer getcharid(3);
+	end;
+
+OnTimer60000:
+	stopnpctimer;
+	initnpctimer;
+	getmapxy( .@map$, .@x, .@y, 0 );
+	if ( .@map$ != @map$ || .@x != @x || .@y != @y ) {	// ถ้าไม่ขยับไปไหน จะพักเวลาไว้
+		set @map$, .@map$;
+		set @x, .@x;
+		set @y, .@y;
+		set @count, @count+1;
+		if ( @count >= .time_count ) {
+			set @count, 0;
+			atcommand "@item 675 100";
+		}
+	}
+	end;
+}

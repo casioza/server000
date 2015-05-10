@@ -1,0 +1,42 @@
+prontera,240,96,3	script	อูฐ#1	938,{
+end;
+}
+
+prontera,241,95,4	script	พ่อค้าหาบเล่#1	947,{
+mes "[^FF0000Nog Miso^000000]";
+mes "^008080 มีธุระอะไร รึ..!!^000000";
+close;
+}
+
+prontera,240,42,0	script	ไอโล้นรับ นมวัว#1	964,{
+mes "[^FF0000Lugie^000000]";
+mes "^008080 วันนี้ ข้าต้องการ นมวัว ...^000000";
+next;
+menu "-^006611 ขายนมวัว^000000",-,"^FF0000 อืม...^000000",exit;
+mes "[^FF0000Lugie^0000]";
+mes "^FF0000ขายให้ข้ากี่อันละ^000000";
+mes "^006611ข้ารับ นมวัวอันละ 3,000 Zeny.^000000";
+input @mosell;
+if(@mosell == 0) close;
+if(countitem(16011) < @mosell) goto NotMilk;
+delitem 16011,@mosell;
+set @moneymo,@mosell*3000;
+set zeny,zeny+@moneymo;
+mes "^008080 อ่ะนี่ เงินเจ้า และ เอา นมวัว ข้ามา ...^000000";
+close;
+
+NotMilk:
+mes "[^FF0000Lugie^000000]";
+mes "^FF0000 อ่อ.. เจ้ามี นมวัว ให้ข้าไม่พอ ..!!!";
+close;
+
+exit:
+close;
+}
+
+
+
+
+
+
+

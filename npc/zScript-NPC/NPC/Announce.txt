@@ -1,0 +1,25 @@
+//=============================================================
+//		-             Xtrap-Colo Scripts             -
+//=============================================================
+
+morocc,150,150,4	script	callcenter_announce	-1,{
+
+OnMinute10:
+	announce $@message_announce_1$,8,0xFFFF00;
+	end;
+OnMinute20:
+	announce $@message_announce_2$,8,0xFFFF00;
+	end;
+OnMinute30:
+	announce $@message_announce_3$,8,0xFFFF00;
+	end;
+OnMinute50:
+	announce $@message_announce_4$,8,0xFFFF00;
+	end;
+OnMinute47:
+	announce $@message_announce_5$,8,0xFFFF00;
+	end;
+OnMinute57:
+	announce $@message_announce_6$,8,0xFFFF00;
+	end;
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="eAthena-7.1">
+</Property><Property Name="Solution File" Value="D:\ro-juti\server\eAthena-7.1.sln">
+</Property><Property Name="Date" Value="21 มีนาคม 2558">
+</Property><Property Name="Time" Value="0:03">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="eAthena-7.1.sln" Description="File successfully backed up as D:\ro-juti\server\eAthena-7.1.sln.old">
+</Event><Event ErrorLevel="0" Project="map-server_txt" Source="vcproj-7.1\map-server_txt.vcproj" Description="Converting project file 'D:\ro-juti\server\vcproj-7.1\map-server_txt.vcproj'.">
+</Event><Event ErrorLevel="2" Project="map-server_txt" Source="vcproj-7.1\map-server_txt.vcproj" Description="File 'D:\ro-juti\server\vcproj-7.1\map-server_txt.vcproj' was not found.">
+</Event><Event ErrorLevel="2" Project="map-server_txt" Source="vcproj-7.1\map-server_txt.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="map-server_txt" Source="vcproj-7.1\map-server_txt.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="login-server_txt" Source="vcproj-7.1\login-server_txt.vcproj" Description="Converting project file 'D:\ro-juti\server\vcproj-7.1\login-server_txt.vcproj'.">
+</Event><Event ErrorLevel="2" Project="login-server_txt" Source="vcproj-7.1\login-server_txt.vcproj" Description="File 'D:\ro-juti\server\vcproj-7.1\login-server_txt.vcproj' was not found.">
+</Event><Event ErrorLevel="2" Project="login-server_txt" Source="vcproj-7.1\login-server_txt.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="login-server_txt" Source="vcproj-7.1\login-server_txt.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="char-server_txt" Source="vcproj-7.1\char-server_txt.vcproj" Description="Converting project file 'D:\ro-juti\server\vcproj-7.1\char-server_txt.vcproj'.">
+</Event><Event ErrorLevel="2" Project="char-server_txt" Source="vcproj-7.1\char-server_txt.vcproj" Description="File 'D:\ro-juti\server\vcproj-7.1\char-server_txt.vcproj' was not found.">
+</Event><Event ErrorLevel="2" Project="char-server_txt" Source="vcproj-7.1\char-server_txt.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="char-server_txt" Source="vcproj-7.1\char-server_txt.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="char-server_sql" Source="vcproj-7.1\char-server_sql.vcproj" Description="Converting project file 'D:\ro-juti\server\vcproj-7.1\char-server_sql.vcproj'.">
+</Event><Event ErrorLevel="2" Project="char-server_sql" Source="vcproj-7.1\char-server_sql.vcproj" Description="File 'D:\ro-juti\server\vcproj-7.1\char-server_sql.vcproj' was not found.">
+</Event><Event ErrorLevel="2" Project="char-server_sql" Source="vcproj-7.1\char-server_sql.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="char-server_sql" Source="vcproj-7.1\char-server_sql.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="login-server_sql" Source="vcproj-7.1\login-server_sql.vcproj" Description="Converting project file 'D:\ro-juti\server\vcproj-7.1\login-server_sql.vcproj'.">
+</Event><Event ErrorLevel="2" Project="login-server_sql" Source="vcproj-7.1\login-server_sql.vcproj" Description="File 'D:\ro-juti\server\vcproj-7.1\login-server_sql.vcproj' was not found.">
+</Event><Event ErrorLevel="2" Project="login-server_sql" Source="vcproj-7.1\login-server_sql.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="login-server_sql" Source="vcproj-7.1\login-server_sql.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="map-server_sql" Source="vcproj-7.1\map-server_sql.vcproj" Description="Converting project file 'D:\ro-juti\server\vcproj-7.1\map-server_sql.vcproj'.">
+</Event><Event ErrorLevel="2" Project="map-server_sql" Source="vcproj-7.1\map-server_sql.vcproj" Description="File 'D:\ro-juti\server\vcproj-7.1\map-server_sql.vcproj' was not found.">
+</Event><Event ErrorLevel="2" Project="map-server_sql" Source="vcproj-7.1\map-server_sql.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="map-server_sql" Source="vcproj-7.1\map-server_sql.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="mapcache" Source="vcproj-7.1\mapcache.vcproj" Description="Converting project file 'D:\ro-juti\server\vcproj-7.1\mapcache.vcproj'.">
+</Event><Event ErrorLevel="2" Project="mapcache" Source="vcproj-7.1\mapcache.vcproj" Description="File 'D:\ro-juti\server\vcproj-7.1\mapcache.vcproj' was not found.">
+</Event><Event ErrorLevel="2" Project="mapcache" Source="vcproj-7.1\mapcache.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="mapcache" Source="vcproj-7.1\mapcache.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="" Source="eAthena-7.1.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="eAthena-7.1.sln" Description="Converted">
+</Event></UpgradeLog>

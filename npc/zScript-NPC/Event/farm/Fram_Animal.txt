@@ -1,0 +1,46 @@
+prontera,0,0,0	script	Animals_1	111,{
+if(#Animal_Cow == 1) { callfunc "Animal_Cow"; close; end; }
+mes "^006611สถานะ^000000 : ^008080คุณยังไม่มี ฟาม สัตว์เลี้ยง ..!!!^000000";
+close;
+}
+prontera,0,0,0	script	Animals_2	111,{
+if(#Animal_Chiken == 1) { callfunc "Animal_Chicken"; close; end; }
+mes "^006611สถานะ^000000 : ^008080คุณยังไม่มี ฟาม สัตว์เลี้ยง ..!!!^000000";
+close;
+}
+prontera,0,0,0	script	Animals_3	111,{
+if(#Animal_Sheep == 1) { callfunc "Animal_Sheep"; close; end; }
+mes "^006611สถานะ^000000 : ^008080คุณยังไม่มี ฟาม สัตว์เลี้ยง ..!!!^000000";
+close;
+}
+prontera,214,81,4	duplicate(Animals_1)	วัว#1	889
+prontera,217,81,4	duplicate(Animals_1)	วัว#2	889
+prontera,214,71,4	duplicate(Animals_1)	วัว#3	889
+prontera,217,71,4	duplicate(Animals_1)	วัว#4	889
+prontera,214,47,4	duplicate(Animals_1)	วัว#5	889
+prontera,217,47,4	duplicate(Animals_1)	วัว#6	889
+prontera,214,59,4	duplicate(Animals_1)	วัว#7	889
+prontera,217,59,4	duplicate(Animals_1)	วัว#8	889
+
+prontera,222,81,4	duplicate(Animals_3)	แกะ#1	1372
+prontera,225,81,4	duplicate(Animals_3)	แกะ#2	1372
+prontera,222,71,4	duplicate(Animals_3)	แกะ#3	1372
+prontera,225,71,4	duplicate(Animals_3)	แกะ#4	1372
+prontera,222,47,4	duplicate(Animals_3)	แกะ#5	1372
+prontera,225,47,4	duplicate(Animals_3)	แกะ#6	1372
+prontera,222,59,4	duplicate(Animals_3)	แกะ#7	1372
+prontera,225,59,4	duplicate(Animals_3)	แกะ#8	1372
+
+prontera,217,75,4	duplicate(Animals_2)	ไก่#1	800
+prontera,222,77,4	duplicate(Animals_2)	ไก่#2	800
+prontera,217,65,4	duplicate(Animals_2)	ไก่#3	800
+prontera,223,63,4	duplicate(Animals_2)	ไก่#4	800
+prontera,215,56,4	duplicate(Animals_2)	ไก่#5	800
+prontera,222,51,4	duplicate(Animals_2)	ไก่#6	800
+
+prontera,222,55,4	duplicate(Animals_2)	ไก่#7	800
+prontera,218,53,4	duplicate(Animals_2)	ไก่#8	800
+prontera,215,51,4	duplicate(Animals_2)	ไก่#9	800
+prontera,222,68,4	duplicate(Animals_2)	ไก่#10	800
+prontera,215,79,4	duplicate(Animals_2)	ไก่#11	800
+prontera,214,68,4	duplicate(Animals_2)	ไก่#12	800

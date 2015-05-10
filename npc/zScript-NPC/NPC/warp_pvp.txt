@@ -1,0 +1,42 @@
+
+-	script	pvp01	-1,{
+mes "[ PVP WARPER ]";
+mes "กรุณาเลือกเมนูค่ะ";
+next;
+menu
+"^ff0000•^CC0033 - PVP Town                     [ "+getmapusers("pvp_y_1-2")+" ] คน.",map1,
+"^ff0000•^6600FF - Death Match                 [ "+getmapusers("guild_vs3")+" ] คน.",map2,
+"^ff0000•^009966 - Champion & Scholar     [ "+getmapusers("pvp_n_2-5")+" ] คน.",map3,
+"^ff0000•^CC9933 - Champion                     [ "+getmapusers("pvp_n_2-3")+" ] คน.",map4;
+
+	map1: 
+	sc_end SC_SERVICE4U;
+	sc_end SC_POEMBRAG;
+	warp "pvp_y_1-2",0,0;
+	close;
+
+	map2: 
+	sc_end SC_SERVICE4U;
+	sc_end SC_POEMBRAG;
+	warp "guild_vs3",0,0; 
+	close;
+
+	map3:
+	sc_end SC_POEMBRAGI;
+	sc_end SC_SERVICE4U;
+	if (BaseJob == Job_Sage || BaseJob == Job_Monk) {
+	if (getmapusers("pvp_n_2-5") < 1000) warp "pvp_n_2-5",0,0;
+	}
+	close;
+
+	map4:
+	sc_end SC_POEMBRAGI;
+	sc_end SC_SERVICE4U;
+	if (BaseJob == Job_Monk) {
+	if (getmapusers("pvp_n_2-3") < 1000) warp "pvp_n_2-3",0,0;
+	}
+	close;
+	Oninit:
+	waitingroom "      ๐ PVP ๐",0;
+	end;
+	} 

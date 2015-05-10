@@ -1,0 +1,392 @@
+﻿Build started 21/3/2558 0:05:09.
+     1>Project "D:\ro-juti\server\vcproj-8\map-server_sql.vcxproj" on node 4 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "map-server_sql\Release\map-server_sql.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\src\common /I..\3rdparty\mysql\win32\include /I..\3rdparty\zlib\old\include /I..\3rdparty\pcre\old\include /I..\3rdparty\msinttypes\include /I..\3rdparty\mt19937ar /Zi /nologo /W3 /WX- /O2 /Ob2 /Oi /Ot /Oy /GT /GL /D WIN32 /D _WIN32 /D __WIN32 /D NDEBUG /D PCRE_SUPPORT /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D FD_SETSIZE=4096 /D _VC80_UPGRADE=0x0710 /D _MBCS /GF /Gm- /EHsc /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"map-server_sql\Release\\" /Fd"map-server_sql\Release\vc100.pdb" /Gd /TC /wd4018 /wd4100 /wd4800 /FIconfig.vc.h /analyze- /errorReport:prompt ..\3rdparty\mt19937ar\mt19937ar.c ..\src\common\core.c ..\src\common\db.c ..\src\common\des.c ..\src\common\ers.c ..\src\common\grfio.c ..\src\common\lock.c ..\src\common\malloc.c ..\src\common\mapindex.c ..\src\common\md5calc.c ..\src\common\nullpo.c ..\src\common\plugins.c ..\src\common\random.c ..\src\common\showmsg.c ..\src\common\socket.c ..\src\common\sql.c ..\src\common\strlib.c ..\src\common\timer.c ..\src\common\utils.c ..\src\map\atcommand.c ..\src\map\battle.c ..\src\map\battleground.c ..\src\map\buyingstore.c ..\src\map\chat.c ..\src\map\chrif.c ..\src\map\clif.c ..\src\map\date.c ..\src\map\duel.c ..\src\map\guild.c ..\src\map\homunculus.c ..\src\map\instance.c ..\src\map\intif.c ..\src\map\itemdb.c ..\src\map\log.c ..\src\map\mail.c ..\src\map\map.c ..\src\map\mapreg_sql.c ..\src\map\mercenary.c ..\src\map\mob.c ..\src\map\npc.c ..\src\map\npc_chat.c ..\src\map\party.c ..\src\map\path.c ..\src\map\pc.c ..\src\map\pet.c ..\src\map\quest.c ..\src\map\script.c ..\src\map\searchstore.c ..\src\map\skill.c ..\src\map\status.c ..\src\map\storage.c ..\src\map\trade.c ..\src\map\unit.c ..\src\map\vending.c
+         mt19937ar.c
+         core.c
+     1>d:\ro-juti\server\src\common\../common/version.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         db.c
+     1>..\src\common\db.c(1934): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         des.c
+         ers.c
+         grfio.c
+         lock.c
+     1>..\src\common\lock.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         malloc.c
+     1>..\src\common\malloc.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         mapindex.c
+         md5calc.c
+         nullpo.c
+     1>..\src\common\nullpo.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\common\nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         plugins.c
+     1>d:\ro-juti\server\src\common\../common/version.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         random.c
+         showmsg.c
+         socket.c
+         sql.c
+         strlib.c
+         timer.c
+         utils.c
+         atcommand.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         Compiling...
+         battle.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\battle.c(2668): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         battleground.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         buyingstore.c
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         chat.c
+     1>..\src\map\chat.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         chrif.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         clif.c
+     1>..\src\map\clif.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/version.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\clif.c(8347): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\clif.c(15307): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         date.c
+         duel.c
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         guild.c
+     1>..\src\map\guild.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\guild.c(1085): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         homunculus.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         instance.c
+     1>d:\ro-juti\server\src\map\../common/version.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         intif.c
+     1>..\src\map\intif.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\intif.c(995): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\intif.c(2086): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         itemdb.c
+     1>..\src\map\itemdb.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         log.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         mail.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         map.c
+     1>..\src\map\map.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/version.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\map.c(992): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\map.c(3119): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         mapreg_sql.c
+         mercenary.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         mob.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         npc.c
+     1>..\src\map\npc.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\npc.c(2084): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\npc.c(3503): warning C4101: 'm' : unreferenced local variable
+         Compiling...
+         npc_chat.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         party.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         path.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         pc.c
+     1>..\src\map\pc.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\pc.c(986): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\pc.c(1932): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\pc.c(2886): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\pc.c(3812): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\pc.c(5667): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\pc.c(6607): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\pc.c(7637): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         pet.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\pet.c(1055): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         quest.c
+     1>d:\ro-juti\server\src\map\../common/version.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         script.c
+     1>..\src\map\script.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\script.c(1004): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\script.c(1983): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\script.c(7837): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\script.c(8962): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\script.c(9924): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         searchstore.c
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         skill.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         status.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\status.c(3915): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         storage.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         trade.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         unit.c
+     1>..\src\map\unit.c : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>..\src\map\unit.c(994): warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+         vending.c
+     1>d:\ro-juti\server\src\map\../common/nullpo.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\unit.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+     1>d:\ro-juti\server\src\map\battle.h : warning C4819: The file contains a character that cannot be represented in the current code page (874). Save the file in Unicode format to prevent data loss
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\map-server_sql.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\3rdparty\mysql\win32\lib /LIBPATH:..\3rdparty\zlib\old\lib /LIBPATH:..\3rdparty\pcre\old\lib libcmt.lib oldnames.lib ws2_32.lib libmysql.lib zdll.lib pcre.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB /MANIFEST /ManifestFile:"map-server_sql\Release\map-server_sql.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"..\map-server_sql.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\map-server_sql.lib" /MACHINE:X86 "map-server_sql\Release\mt19937ar.obj"
+         "map-server_sql\Release\core.obj"
+         "map-server_sql\Release\db.obj"
+         "map-server_sql\Release\des.obj"
+         "map-server_sql\Release\ers.obj"
+         "map-server_sql\Release\grfio.obj"
+         "map-server_sql\Release\lock.obj"
+         "map-server_sql\Release\malloc.obj"
+         "map-server_sql\Release\mapindex.obj"
+         "map-server_sql\Release\md5calc.obj"
+         "map-server_sql\Release\nullpo.obj"
+         "map-server_sql\Release\plugins.obj"
+         "map-server_sql\Release\random.obj"
+         "map-server_sql\Release\showmsg.obj"
+         "map-server_sql\Release\socket.obj"
+         "map-server_sql\Release\sql.obj"
+         "map-server_sql\Release\strlib.obj"
+         "map-server_sql\Release\timer.obj"
+         "map-server_sql\Release\utils.obj"
+         "map-server_sql\Release\atcommand.obj"
+         "map-server_sql\Release\battle.obj"
+         "map-server_sql\Release\battleground.obj"
+         "map-server_sql\Release\buyingstore.obj"
+         "map-server_sql\Release\chat.obj"
+         "map-server_sql\Release\chrif.obj"
+         "map-server_sql\Release\clif.obj"
+         "map-server_sql\Release\date.obj"
+         "map-server_sql\Release\duel.obj"
+         "map-server_sql\Release\guild.obj"
+         "map-server_sql\Release\homunculus.obj"
+         "map-server_sql\Release\instance.obj"
+         "map-server_sql\Release\intif.obj"
+         "map-server_sql\Release\itemdb.obj"
+         "map-server_sql\Release\log.obj"
+         "map-server_sql\Release\mail.obj"
+         "map-server_sql\Release\map.obj"
+         "map-server_sql\Release\mapreg_sql.obj"
+         "map-server_sql\Release\mercenary.obj"
+         "map-server_sql\Release\mob.obj"
+         "map-server_sql\Release\npc.obj"
+         "map-server_sql\Release\npc_chat.obj"
+         "map-server_sql\Release\party.obj"
+         "map-server_sql\Release\path.obj"
+         "map-server_sql\Release\pc.obj"
+         "map-server_sql\Release\pet.obj"
+         "map-server_sql\Release\quest.obj"
+         "map-server_sql\Release\script.obj"
+         "map-server_sql\Release\searchstore.obj"
+         "map-server_sql\Release\skill.obj"
+         "map-server_sql\Release\status.obj"
+         "map-server_sql\Release\storage.obj"
+         "map-server_sql\Release\trade.obj"
+         "map-server_sql\Release\unit.obj"
+         "map-server_sql\Release\vending.obj"
+         Generating code
+         Finished generating code
+         map-server_sql.vcxproj -> D:\ro-juti\server\vcproj-8\..\map-server_sql.exe
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"..\map-server_sql.exe;#1" /manifest "map-server_sql\Release\map-server_sql.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         Deleting file "map-server_sql\Release\map-server_sql.unsuccessfulbuild".
+         Touching "map-server_sql\Release\map-server_sql.lastbuildstate".
+     1>Done Building Project "D:\ro-juti\server\vcproj-8\map-server_sql.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:29.71

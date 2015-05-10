@@ -1,0 +1,340 @@
+function	script	F_House_Script	{
+set .@sethome, getarg(0);
+set .@numberhouse$, getarg(1);
+query_sql "SELECT `guild_id` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@guild;
+query_sql "SELECT `guildsmall` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@guildsmall;
+query_sql "SELECT `guildsmall1` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@guildsmall1;
+query_sql "SELECT `guildsmall2` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@guildsmall2;
+query_sql "SELECT `guildsmall3` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@guildsmall3;
+set .@GID,getcharid(2);
+if(.@GID==0) goto NoGuild;
+if(.@guild==getcharid(2)) goto GuildMaster1;
+if(.@guildsmall==getcharid(2)) goto GuildMaster1;
+if(.@guildsmall1==getcharid(2)) goto GuildMaster1;
+if(.@guildsmall2==getcharid(2)) goto GuildMaster1;
+if(.@guildsmall3==getcharid(2)) goto GuildMaster1;
+if (strcharinfo(0) != getguildmaster(.@GID)) goto NoGuild;
+
+mes "^0000FFระบบบ้านเช่า^000000";
+mes "ท่านต้องการเช่าบ้าน ?";
+switch(select("- ดูสถานะบ้าน:- ขอทำการเช่าบ้าน")) {
+case 1:
+query_sql "SELECT `used` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@used;
+if (.@used == 1) { 
+query_sql "SELECT `end_house` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@end_house;
+set .@timer, .@end_house;
+set .@left, .@timer - gettimetick(2);
+set .@days,  .@left / (24*60*60);
+set .@hours, .@left % (24*60*60) / (60*60);
+set .@mins,  .@left % (24*60*60) % (60*60) / (60);
+set .@secs,  .@left % (24*60*60) % (60*60) % (60);
+set .@meg$, "^FF0000เช่าแล้ว^000000"; } else { set .@meg$, "^00FF00ว่าง^000000"; }
+menu "บ้านเลขที่ "+.@numberhouse$+" ("+.@meg$+") "+ .@days +" วัน "+ .@hours +" ชั่วโมง "+ .@mins +" นาที "+ .@secs +" วินาที",-;
+close;
+case 2:
+query_sql "SELECT `used` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@used;
+menu "บ้านเลขที่ "+.@numberhouse$+"",L_Rental;
+L_Rental: if (.@used==1) { mes "^0000FFมีคนเช่าแล้ว^000000"; close; }; goto L_Rentel_Start;
+close;
+L_Rentel_Start:
+		set .@GID,getcharid(2);
+		mes "^0000FFระบบบ้านเช่า^000000";
+		mes "ต้องการเข้าบ้าน โปรดเลือก";
+		set .@rent_manu,select(
+		"ต้องการเช่าบ้านเดี๋ยวนี้ (ข้ามีกุญแจแล้ว !!)",
+		"ออกจากเมนู");
+		if (.@rent_manu == 1) {
+		if(countitem($@keydoor)<1){
+		mes "- ท่านไม่มีกุญแจ";
+		mes "- เมื่อหามาไดแล้วก็มาหาข้าได้เลย";
+		close;
+		}
+		set .@bettimer, gettimetick(2) + $@super_home_time;
+		query_sql "UPDATE `rent_home` SET `start_house` = '"+gettimetick(2)+"' WHERE `home_id` = '"+.@sethome+"'";
+		query_sql "UPDATE `rent_home` SET `end_house` = '"+.@bettimer+"' WHERE `home_id` = '"+.@sethome+"'";
+		query_sql "UPDATE `rent_home` SET `guild_id` = '"+.@GID+"' WHERE `home_id` = '"+.@sethome+"'";
+		query_sql "UPDATE `rent_home` SET `used` = '1' WHERE `home_id` = '"+.@sethome+"'";
+		Announce "Guild  [" + getguildName(.@GID) + "] ได้ทำการเช่าบ้านหลังที่ ["+.@sethome+"] เป็นจำนวน 30 วัน",8;
+		delitem $@keydoor,1;
+		} else if (.@rent_manu == 2) {
+		mes "- แล้วพบกันครับท่าน";
+		close;
+		} 
+		next;
+		mes "^0000FFระบบบ้านเช่า^000000";
+		mes "เรียบร้อยครับ";
+}
+close;
+
+GuildMaster1:
+set .@warphome$, strnpcinfo(2);
+warp .@warphome$,128,86;	//  เมื่อเข้าวาปหน้าบ้านแล้วจะมาที่นี่
+end;
+
+NoGuild:
+dispbottom "คุณไม่มีกิลด์และไม่ใช่ Master Guild";
+end;
+}
+
+function	script	F_House_Onload	{
+set .@sethome, getarg(0);
+set .@GID,getcharid(2);
+if(.@GID==0) { 
+savepoint "pvp_moroccx",156,93;
+warp "SavePoint",0,0;
+end;
+};
+query_sql "SELECT `end_house` FROM `rent_home`  WHERE `guildsmall` = "+.@GID+" and `home_id` = "+.@sethome+"",.@end_house;
+query_sql "SELECT `end_house` FROM `rent_home`  WHERE `guildsmall1` = "+.@GID+" and `home_id` = "+.@sethome+"",.@end_house;
+query_sql "SELECT `end_house` FROM `rent_home`  WHERE `guildsmall2` = "+.@GID+" and `home_id` = "+.@sethome+"",.@end_house;
+query_sql "SELECT `end_house` FROM `rent_home`  WHERE `guildsmall3` = "+.@GID+" and `home_id` = "+.@sethome+"",.@end_house;
+if(.@end_house) { 
+end;
+ };
+query_sql "SELECT `end_house` FROM `rent_home`  WHERE `guild_id` = "+.@GID+" and `home_id` = "+.@sethome+"",.@end_house;
+
+if(!.@end_house) { 
+dispbottom "กิลด์คุณ ไม่มีสิทธ์เข้าบ้านนี้ บ้าน "+.@sethome+"";
+savepoint "pvp_moroccx",156,93;
+warp "SavePoint",0,0;
+end;
+ };
+set .@timeori, gettimetick(2);
+if (.@timeori > .@end_house) {
+query_sql "UPDATE `rent_home` SET `start_house` = '0' WHERE `guild_id` = '"+.@GID+"' and `home_id` = "+.@sethome+"";
+query_sql "UPDATE `rent_home` SET `end_house` = '0' WHERE `guild_id` = '"+.@GID+"' and `home_id` = "+.@sethome+"";
+query_sql "UPDATE `rent_home` SET `used` = '0' WHERE `guild_id` = '"+.@GID+"' and `home_id` = "+.@sethome+"";
+query_sql "UPDATE `rent_home` SET `guildsmall` = '0' WHERE `guild_id` = '"+.@GID+"' and `home_id` = "+.@sethome+"";
+query_sql "UPDATE `rent_home` SET `guildsmall1` = '0' WHERE `guild_id` = '"+.@GID+"' and `home_id` = "+.@sethome+"";
+query_sql "UPDATE `rent_home` SET `guildsmall2` = '0' WHERE `guild_id` = '"+.@GID+"' and `home_id` = "+.@sethome+"";
+query_sql "UPDATE `rent_home` SET `guildsmall3` = '0' WHERE `guild_id` = '"+.@GID+"' and `home_id` = "+.@sethome+"";
+query_sql "UPDATE `rent_home` SET `guild_id` = '0' WHERE `guild_id` = '"+.@GID+"' and `home_id` = "+.@sethome+"";
+dispbottom "คุณหมดเวลาเช่าแล้ว";
+savepoint "pvp_moroccx",156,93;
+warp "SavePoint",0,0;
+end;
+}
+query_sql "SELECT `end_house` FROM `rent_home`  WHERE `guild_id` = "+.@GID+" and `home_id` = "+.@sethome+"",.@end_house;
+set .@timer, .@end_house;
+set .@left, .@timer - gettimetick(2);
+set .@days,  .@left / (24*60*60);
+set .@hours, .@left % (24*60*60) / (60*60);
+set .@mins,  .@left % (24*60*60) % (60*60) / (60);
+set .@secs,  .@left % (24*60*60) % (60*60) % (60);
+dispbottom "คุณเหลือเวลาอีก "+ .@days +" วัน "+ .@hours +" ชั่วโมง "+ .@mins +" นาที "+ .@secs +" วินาที ";
+//dispbottom "หากคุณต้องการให้ เข้าบ้านนี้....ให้คุณนำกิลเล็ก ไปเข็ค ID Guild ที่หน้าบ้าน แล้วให้คุณเข้ามาที่บ้านอีกครั้ง นำเลข ID Guild ที่ได้มาใส่กับ NPC Setting Home";
+end;
+}
+
+function	script	F_House_Setting	{
+set .@GID,getcharid(2);
+set .@sethome, getarg(0);
+set .@CID,getcharid(0);
+query_sql "SELECT `assistant` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@assistant;
+query_sql "SELECT `end_house` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@time_house;
+set .@timer, .@time_house;
+set .@left, .@timer - gettimetick(2);
+set .@days,  .@left / (24*60*60);
+set .@hours, .@left % (24*60*60) / (60*60);
+set .@mins,  .@left % (24*60*60) % (60*60) / (60);
+set .@secs,  .@left % (24*60*60) % (60*60) % (60);
+if (.@CID == .@assistant) goto L_Sub;
+if (strcharinfo(0) == getguildmaster(.@GID)) goto L_Main;
+end;
+
+L_Main:
+set .@sethome, getarg(0);
+set .@warphome$, strnpcinfo(2);
+query_sql "SELECT `guild_id` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@guild;
+if(.@GID==0) end;
+if(.@guild==getcharid(2)) {
+L_Sub:
+mes "[^000088 Home Setting ^000000]";
+mes "กรุณากด Next เพื่อเลือกสิ่งที่ต้องการ";
+mes "";
+mes "คุณเหลือเวลาอีก "+ .@days +" วัน "+ .@hours +" ชั่วโมง "+ .@mins +" นาที "+ .@secs +" วินาที ";
+next;
+switch(select("- อนุญาติให้กิลเล็กเข้าบ้านได้ (^FF0000ได้แค่ 4 กิลด์^000000):- แต่งตั้งรองหัวหน้าบ้านเช่า:- ขอเปลี่ยนเจ้าของบ้าน:- ขอยุติการเช่าบ้าน")) {
+case 1:
+next;
+mes "[^000088 Home Setting ^000000]";
+mes "กรุณาเลือก Slot 1-4";
+next;
+query_sql "SELECT `guildsmall` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@guildsmall1;
+query_sql "SELECT `guildsmall1` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@guildsmall2;
+query_sql "SELECT `guildsmall2` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@guildsmall3;
+query_sql "SELECT `guildsmall3` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@guildsmall4;
+set .@guildsmall1$,"GuildID ^FF0000"+.@guildsmall1+"^000000";
+set .@guildsmall2$,"GuildID ^FF0000"+.@guildsmall2+"^000000";
+set .@guildsmall3$,"GuildID ^FF0000"+.@guildsmall3+"^000000";
+set .@guildsmall4$,"GuildID ^FF0000"+.@guildsmall4+"^000000";
+if (.@guildsmall1==0) { set .@guildsmall1$,"ยังไม่มีการอนุญาติ"; }; 
+if (.@guildsmall2==0) { set .@guildsmall2$,"ยังไม่มีการอนุญาติ"; }; 
+if (.@guildsmall3==0) { set .@guildsmall3$,"ยังไม่มีการอนุญาติ"; }; 
+if (.@guildsmall4==0) { set .@guildsmall4$,"ยังไม่มีการอนุญาติ"; }; 
+menu
+	"Slot 1."+.@guildsmall1$+"",L_Hset1,
+	"Slot 2."+.@guildsmall2$+"",L_Hset2,
+	"Slot 3."+.@guildsmall3$+"",L_Hset3,
+	"Slot 4."+.@guildsmall4$+"",L_Hset4,
+	"ออก",-;
+close;
+
+L_Hset1:
+mes "[^000088 Home Setting ^000000]";
+mes "กรุณาใส่เลข Guild ID";
+mes "- ในกรณีต้องการยกเลิก การอนุญาติให้ใส่เลข 0";
+next;
+input .@insertguildsmall;
+if(.@insertguildsmall==getcharid(2)) { mes "[^000088 Home Setting ^000000]"; mes "จะใส่ Guild ID ตัวเองทำ......"; close; }
+if(last_use > gettimetick(2)) {
+ dispbottom "กรุณารอ 5 วินาทีเพื่อทำรายการใหม่.";
+ end;
+ }
+set last_use, gettimetick(2) + 5;
+query_sql "UPDATE `rent_home` SET `guildsmall` = '"+.@insertguildsmall+"' WHERE `home_id` = "+.@sethome+"";
+next;
+mes "[^000088 Home Setting ^000000]";
+mes "เรียบร้อยแล้ว";
+close;
+
+L_Hset2:
+mes "[^000088 Home Setting ^000000]";
+mes "กรุณาใส่เลข Guild ID";
+mes "- ในกรณีต้องการยกเลิก การอนุญาติให้ใส่เลข 0";
+next;
+input .@insertguildsmall;
+if(.@insertguildsmall==getcharid(2)) { mes "[^000088 Home Setting ^000000]"; mes "จะใส่ Guild ID ตัวเองทำ......"; close; }
+if(last_use > gettimetick(2)) {
+ dispbottom "กรุณารอ 5 วินาทีเพื่อทำรายการใหม่.";
+ end;
+ }
+set last_use, gettimetick(2) + 5;
+query_sql "UPDATE `rent_home` SET `guildsmall1` = '"+.@insertguildsmall+"' WHERE `home_id` = "+.@sethome+"";
+next;
+mes "[^000088 Home Setting ^000000]";
+mes "เรียบร้อยแล้ว";
+close;
+
+L_Hset3:
+mes "[^000088 Home Setting ^000000]";
+mes "กรุณาใส่เลข Guild ID";
+mes "- ในกรณีต้องการยกเลิก การอนุญาติให้ใส่เลข 0";
+next;
+input .@insertguildsmall;
+if(.@insertguildsmall==getcharid(2)) { mes "[^000088 Home Setting ^000000]"; mes "จะใส่ Guild ID ตัวเองทำ......"; close; }
+if(last_use > gettimetick(2)) {
+ dispbottom "กรุณารอ 5 วินาทีเพื่อทำรายการใหม่.";
+ end;
+ }
+set last_use, gettimetick(2) + 5;
+query_sql "UPDATE `rent_home` SET `guildsmall2` = '"+.@insertguildsmall+"' WHERE `home_id` = "+.@sethome+"";
+next;
+mes "[^000088 Home Setting ^000000]";
+mes "เรียบร้อยแล้ว";
+close;
+
+L_Hset4:
+mes "[^000088 Home Setting ^000000]";
+mes "กรุณาใส่เลข Guild ID";
+mes "- ในกรณีต้องการยกเลิก การอนุญาติให้ใส่เลข 0";
+next;
+input .@insertguildsmall;
+if(.@insertguildsmall==getcharid(2)) { mes "[^000088 Home Setting ^000000]"; mes "จะใส่ Guild ID ตัวเองทำ......"; close; }
+if(last_use > gettimetick(2)) {
+ dispbottom "กรุณารอ 5 วินาทีเพื่อทำรายการใหม่.";
+ end;
+ }
+set last_use, gettimetick(2) + 5;
+query_sql "UPDATE `rent_home` SET `guildsmall3` = '"+.@insertguildsmall+"' WHERE `home_id` = "+.@sethome+"";
+next;
+mes "[^000088 Home Setting ^000000]";
+mes "เรียบร้อยแล้ว";
+close;
+//จบ Case1
+case 2:
+next;
+mes "[^000088 Home Setting ^000000]";
+mes "กรุณาใส่ CharID ของผู้เล่น ที่ท่านจะแต่งตั้ง";
+mes "โดยให้ผู้เล่น นั้นคุยกับ NPC ^0000FFGetChatID^000000 ในบ้าน";
+next;
+mes "[^000088 Home Setting ^000000]";
+mes "กรุณาใส่เลข CharID";
+mes "- ในกรณีต้องการยกเลิก การอนุญาติให้ใส่เลข 0";
+next;
+input .@insertcharid;
+if(.@insertcharid==getcharid(0)) { mes "[^000088 Home Setting ^000000]"; mes "จะใส่ Char ID ตัวเองทำ......"; close; }
+if(last_use > gettimetick(2)) {
+ dispbottom "กรุณารอ 5 วินาทีเพื่อทำรายการใหม่.";
+ end;
+ }
+set last_use, gettimetick(2) + 5;
+query_sql "UPDATE `rent_home` SET `assistant` = '"+.@insertcharid+"' WHERE `home_id` = "+.@sethome+"";
+next;
+mes "[^000088 Home Setting ^000000]";
+mes "เรียบร้อยแล้ว";
+close;
+//จบ Case2
+case 3:
+next;
+mes "[^000088 Home Setting ^000000]";
+mes "^FF0000คุณหมั่นใจแน่นะว่าจะต้องการเปลี่ยน เจ้าของบ้าน (และกิลท่านจะไม่สามารถเข้ามาที่นี่ได้อีกหลังจากเปลี่ยน)^000000";
+mes " !@#$%^&*";
+next;
+menu
+	"ชัวววววววววว",-;
+mes "[^000088 Home Setting ^000000]";
+mes "กรุณาใส่เลข GuildID";
+mes "- ไม่สามารถใส่ 0 ได้";
+mes "^FF0000- กรุณาตรวจสอบเลข GuildID ดีๆเพราะหากใส่ผิดอาจทำให้ผู้อื่นเข้ามาครอบครองได้^000000";
+next;
+input .@changermaster;
+if(.@changermaster==0) { mes "[^000088 Home Setting ^000000]"; mes "ไม่สามารถทำรายการได้"; close; }
+if(last_use > gettimetick(2)) {
+ dispbottom "กรุณารอ 5 วินาทีเพื่อทำรายการใหม่.";
+ end;
+ }
+set last_use, gettimetick(2) + 5;
+query_sql "UPDATE `rent_home` SET `guild_id` = '"+.@changermaster+"' WHERE `home_id` = "+.@sethome+"";
+next;
+mes "[^000088 Home Setting ^000000]";
+mes "เรียบร้อยแล้ว";
+close;
+//จบ Case3
+case 4:
+mes "[^000088 Home Setting ^000000]";
+mes "คุณต้องการยุติการเช่าบ้าน ?";
+mes "^FF0000คุณจะไม่ได้ค่าเช่าคืนแม้แต่ Cash เดียว^000000";
+next;
+switch(select("- ขอยืนยันทำการยุติการเช่าบ้าน:- ยกเลิกรายการ")) {
+case 1:
+query_sql "UPDATE `rent_home` SET `guildsmall` = '0' WHERE `guild_id` = '"+.@GID+"'";
+query_sql "UPDATE `rent_home` SET `guildsmall1` = '0' WHERE `guild_id` = '"+.@GID+"'";
+query_sql "UPDATE `rent_home` SET `guildsmall2` = '0' WHERE `guild_id` = '"+.@GID+"'";
+query_sql "UPDATE `rent_home` SET `guildsmall3` = '0' WHERE `guild_id` = '"+.@GID+"'";
+query_sql "UPDATE `rent_home` SET `start_house` = '0' WHERE `guild_id` = '"+.@GID+"'";
+query_sql "UPDATE `rent_home` SET `end_house` = '0' WHERE `guild_id` = '"+.@GID+"'";
+query_sql "UPDATE `rent_home` SET `used` = '0' WHERE `guild_id` = '"+.@GID+"'";
+query_sql "UPDATE `rent_home` SET `guild_id` = '0' WHERE `guild_id` = '"+.@GID+"'";
+mapwarp .@warphome$,"pvp_moroccx",160,55;
+dispbottom "คุณได้ทำการยุติบ้านเรียบร้อยแล้ว ขอบคุณครับ";
+close;
+case 2:
+close;
+}
+}
+end;
+}
+mes "[^000088 Home Setting ^000000]";
+mes "ท่านไม่ใช่เจ้าของบ้าน";
+mes "คุณเหลือเวลาอีก "+ .@days +" วัน "+ .@hours +" ชั่วโมง "+ .@mins +" นาที "+ .@secs +" วินาที ";
+close2;
+end;
+}
+
+function	script	F_House_Flag	{
+set .@sethome, getarg(0);
+query_sql "SELECT `guild_id` FROM `rent_home`  WHERE `home_id` = "+.@sethome+"",.@guild;
+FlagEmblem .@guild;
+return;
+}

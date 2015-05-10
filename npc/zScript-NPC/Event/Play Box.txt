@@ -1,0 +1,71 @@
+//===== eAthena Script =======================================
+//= PlayBox
+//===== By: ==================================================
+//= PlayNewZone
+//= Modified By VanNovA
+//===== Current Version: =====================================
+
+-	script	PlayBoxTimer	-1,{
+OnClock0002:
+OnClock0102:
+OnClock0202:
+OnClock0302:
+OnClock0402:
+OnClock0502:
+OnClock0602:
+OnClock0702:
+OnClock0802:
+OnClock0902:
+OnClock1002:
+OnClock1102:
+OnClock1202:
+OnClock1302:
+OnClock1402:
+OnClock1502:
+OnClock1602:
+OnClock1702:
+OnClock1802:
+OnClock1902:
+OnClock2002:
+OnClock2102:
+OnClock2202:
+OnClock2302:
+set $@PB_Count,0;
+announce "[ PlayBox ] : ขณะนี้กล่อง Play Box ได้เกิดขึ้นที่เมือง new_morocc จำนวน 100 กล่อง มีเวลาในการกำจัด 5 นาที  ",0;
+killmonsterall "new_morocc"; 
+monster "new_morocc",0,0,"Play Box",2637,150,"PlayBoxTimer::OnBox";
+initnpctimer;
+end;
+
+OnBox:
+	getitem 675,15;
+	set .@rand, rand(10);
+	setarray .@level[0],0,0,0,0,0,0,0,0;
+	set .@runa, .@level[rand(getarraysize(.@level))];
+	getitem .@runa,1; //>> จำนวนของ
+	set $@PB_Count,$@PB_Count+1;
+	announce "[ PlayBox ] : กล่องใบที่ [ "+$@PB_Count+"/100 ] ถูกพบโดยคุณ [ "+strcharinfo(0)+" ]",0;
+end;
+OnTimer60000:
+if($@PB_Count==100){ stopnpctimer; set $@PB_Count,0; }
+announce "[ PlayBox ] :  มีเวลาในการกำจัดอีก 4 นาที  ",0;
+end;
+OnTimer120000:
+if($@PB_Count==100){ stopnpctimer; set $@PB_Count,0; }
+announce "[ PlayBox ] :  มีเวลาในการกำจัดอีก 3 นาที  ",0;
+end;
+OnTimer180000:
+if($@PB_Count==100){ stopnpctimer; set $@PB_Count,0; }
+announce "[ PlayBox ] :  มีเวลาในการกำจัดอีก 2 นาที  ",0;
+end;
+OnTimer240000:
+if($@PB_Count==100){ stopnpctimer; set $@PB_Count,0; }
+announce "[ PlayBox ] :  มีเวลาในการกำจัดอีก 1 นาที  ",0;
+end;
+OnTimer300000:
+announce "[ PlayBox ] :  หมดเวลากิจกรรมแล้ว  ",0;
+stopnpctimer;
+set $@PB_Count,0;
+killmonsterall "new_morocc"; 
+end;
+}

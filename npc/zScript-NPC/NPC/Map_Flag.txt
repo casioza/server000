@@ -1,0 +1,50 @@
+//=============================================================
+//		-             Xtrap-Colo Scripts             -
+//=============================================================
+
+new_morocc	mapflag	nobranch
+new_morocc	mapflag	noteleport
+new_morocc	mapflag	noicewall
+new_morocc	mapflag	nodrop
+
+new_1-1	mapflag	nodrop
+
+pvp_y_1-2	mapflag	nowarp
+pvp_y_1-2	mapflag	nowarpto
+pvp_y_1-2	mapflag	nosave	SavePoint
+pvp_y_1-2	mapflag	nomemo
+pvp_y_1-2	mapflag	noteleport
+pvp_y_1-2	mapflag	noicewall
+pvp_y_1-2	mapflag	nobranch
+pvp_y_1-2	mapflag	noreturn
+pvp_y_1-2	mapflag	pvp
+
+guild_vs3	mapflag	nowarp
+guild_vs3	mapflag	nowarpto
+guild_vs3	mapflag	nosave	SavePoint
+guild_vs3	mapflag	nomemo
+guild_vs3	mapflag	noteleport
+guild_vs3	mapflag	noicewall
+guild_vs3	mapflag	nobranch
+guild_vs3	mapflag	noreturn
+guild_vs3	mapflag	pvp
+
+pvp_n_2-5	mapflag	nowarp
+pvp_n_2-5	mapflag	nowarpto
+pvp_n_2-5	mapflag	nosave	SavePoint
+pvp_n_2-5	mapflag	nomemo
+pvp_n_2-5	mapflag	noteleport
+pvp_n_2-5	mapflag	noicewall
+pvp_n_2-5	mapflag	nobranch
+pvp_n_2-5	mapflag	noreturn
+pvp_n_2-5	mapflag	pvp
+
+pvp_n_2-3	mapflag	nowarp
+pvp_n_2-3	mapflag	nowarpto
+pvp_n_2-3	mapflag	nosave	SavePoint
+pvp_n_2-3	mapflag	nomemo
+pvp_n_2-3	mapflag	noteleport
+pvp_n_2-3	mapflag	noicewall
+pvp_n_2-3	mapflag	nobranch
+pvp_n_2-3	mapflag	noreturn
+pvp_n_2-3	mapflag	pvp

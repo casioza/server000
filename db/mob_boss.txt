@@ -1,0 +1,176 @@
+// Bloody Branch Summonable Monsters Database
+//
+// Structure of Database:
+// MobID,DummyName,Rate
+
+0,Baphomet,1039
+1038,Osiris,1000000
+1039,Baphomet,1000000
+1046,Doppelganger,1000000
+1059,Mistress,1000000
+1086,Golden Thief Bug,1000000
+1087,Orc Hero,1000000
+1096,Angeling,1000000
+1112,Drake,1000000
+1115,Eddga,1000000
+1120,Ghostring,1000000
+1147,Maya,1000000
+1150,Moonlight Flower,1000000
+1157,Pharaoh,1000000
+1159,Phreeoni,1000000
+1190,Orc Lord,1000000
+1251,Stormy Knight,1000000
+1252,Garm,1000000
+1272,Dark Lord,1000000
+1312,Turtle General,1000000
+1373,Lord of the Dead,1000000
+1388,Arc Angeling,1000000
+1389,Dracula,1000000
+1418,Evil Snake Lord,1000000
+1492,Samurai Specter,1000000
+1511,Amon Ra,1000000
+1582,Deviling,1000000
+1583,Tao Gunka,1000000
+1623,RSX-0806,1000000
+1630,White Lady,1000000
+1658,Egnigem Cenia,1000000
+1685,Vesper,1000000
+1688,Lady Tanee,1000000
+1708,Thanatos Phantom,1000000
+1719,Detardeurus,1000000
+1734,Kiel D-01,1000000
+1751,Valkyrie Randgris,1000000
+1768,Gloom Under Night,1000000
+1779,Ktullanux,1000000
+1785,Atros,1000000
+1832,Ifrit,1000000
+1871,Fallen Bishop Hibram,1000000
+1873,Beelzebub,1000000
+1885,Gopinich,1000000
+2087,Queen Scaraba,1000000
+2068,Boitata,1000000
+2022,Nidhoggr's Shadow,1000000
+1990,Hardrock Mammoth,1000000
+1991,Tendrilion,1000000
+1956,Naght Sieger,1000000
+
+//2700,Addax,1000000
+//2701,Ancient_Tree,1000000
+//2702,Aposis,1000000
+//2703,Arachne,1000000
+//2704,Ayame_Man,1000000
+//2705,Barorl,1000000
+2706,Beast_Vincento,1000000
+//2707,Cannon_Shell,1000000
+2708,Captain_Skull,1000000
+2709,Cherry_Blue,1000000
+2710,Guardian_Angel,1000000
+//2711,Corpse_Hand,1000000
+//2712,Crown_Zero,1000000
+2713,Cyan_Satan,1000000
+//2714,Cyberbot,1000000
+2715,Daehyon,1000000
+//2716,Daibo_Kyo,1000000
+2717,Dancer_Isabelle,1000000
+//2718,Dancer_Michel,1000000
+//2719,Dark_Hollow,1000000
+//2720,Dark_Lady,1000000
+//2721,Dark_Lady,1000000
+//2722,DarkKnight,1000000
+//2723,Diablo_Baphomet,1000000
+//2724,Dragon_Lord,1000000
+//2725,Dragon_Yellow,1000000
+2726,Elf_Men,1000000
+//2727,Entweihen,1000000
+//2728,Eye_One_Devil,1000000
+2729,Fabilsag,1000000
+2730,Fight_Man,1000000
+//2731,Fire_Horse,1000000
+//2732,Fire_Wolf,1000000
+//2733,Flat_Salamander,1000000
+//2734,Frozen_Corpse,1000000
+2735,Gentle_Sting,1000000
+//2736,Giant_Baphomet,1000000
+//2737,GiantJuggernaut,1000000
+//2739,God_Poring,1000000
+//2740,Gold_Lord_Of_Death,1000000
+//2741,High_Kraken,1000000
+//2742,High_Orc_Lord,1000000
+//2743,Hollow_Poring,1000000
+//2744,Hou_Chu,1000000
+//2745,Ichthyosaur,1000000
+//2746,Igniz,1000000
+//2747,Jaguar,1000000
+//2748,Jinn,1000000
+//2749,Joker,1000000
+2750,Kraken,1000000
+2751,Larva,1000000
+//2752,Leviathan,1000000
+2753,Madame_Chiffon,1000000
+//2754,Madamfondue,1000000
+2755,Maiden_Ghost,1000000
+//2756,Master_Foe,1000000
+//2757,Master_Mong,1000000
+//2758,MeawMow,1000000
+//2759,Mermaid_Little,1000000
+//2760,Merman_Aku,1000000
+//2761,Merman_Ale,1000000
+//2762,Merrow,1000000
+//2763,Mikijung,1000000
+//2764,Mole_Worker,1000000
+//2765,Moonlight_Baby,1000000
+//2766,MoonlightLady,1000000
+//2767,Mummy_Girl,1000000
+//2768,Nephthys,1000000
+2769,Officer_Kille,1000000
+2770,Okto,1000000
+//2771,Old_beelzebub,1000000
+2772,Phoenix,1000000
+//2773,Pirate_Ghost,1000000
+//2774,Poring_Master,1000000
+//2775,Predator,1000000
+//2776,Princess_Mermaid,1000000
+2777,Queen_Mummy,1000000
+//2778,Samurai_Red,1000000
+//2779,Santagirl,1000000
+2780,Sea_Elephant,1000000
+//2781,Sea_Tiger,1000000
+//2782,Shining_int,1000000
+2783,Siren_Mermaid,1000000
+//2784,Slithis,1000000
+//2785,Snake_Yamata,1000000
+//2786,Sphinx,1000000
+//2787,Spicy_Dragon,1000000
+//2788,Sropho,1000000
+//2789,Standing_Salamander,1000000
+//2790,Stone_Soldier,1000000
+//2791,Sulaphat,1000000
+//2792,Sword_Kyo,1000000
+//2793,Takashi,1000000
+2794,Thor_Valkyrie,1000000
+//2795,ThorMorroc,1000000
+//2796,Tiger_Pakyo,1000000
+//2797,Torpedo_Fish,1000000
+//2798,Tritch,1000000
+//2799,Tutankhamen,1000000
+//2800,Ugly_Corpse,1000000
+//2801,Ugly_Mermaid,1000000
+//2802,Uzumaki_Naruto,1000000
+//2803,Water_Weed_Witch,1000000
+//2804,Were_wolf,1000000
+2805,Werepot,1000000
+//2806,Wild_rider,1000000
+//2807,Wing_Salamander,1000000
+//2808,Wolf_Warg,1000000
+//2809,xZipper_Bear,1000000
+2810,Bangungot,1000000
+2811,bungisngis,1000000
+2812,Pyuriel,1000000
+2813,Soheon,1000000
+2814,Arrow_Men,1000000
+//2815,Man_Shower,1000000
+//2816,SwordMAN_ICE,1000000
+//2817,Yamada,1000000
+//2818,Ninja_Kakashi,1000000
+//2819,Kyoshiro,1000000
+//2820,Kyo_Shirima,1000000

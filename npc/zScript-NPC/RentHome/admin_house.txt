@@ -1,0 +1,46 @@
+-	script	house_Config	-1,{
+end;
+OnInit: 
+// ส่วนต่างของเวลา 30 วัน
+set $@super_home_time, 30 * 24*60*60;
+// กุญแจ
+set $@keydoor, 7425;
+// Installhouse 20 หลัง
+if (!$Installhouse4) {
+set $lnstallhousecount,20;
+for (set .@i,0; .@i < $lnstallhousecount; set .@i,.@i+1) {
+set .@housecount,.@housecount+1;
+query_sql "INSERT INTO `rent_home` VALUES ("+.@housecount+", 0, 0, 0, 0, 0, 0, 0, 0,0)";
+}
+set $Installhouse4,1;
+end;
+}
+end;
+}
+
+//ตัว Reset เวลาบ้าน เช็คทุกๆ ชม.
+-	script	reset_timer#hom	-1,{
+OnTimer360000:
+	set .@count, query_sql("SELECT `end_house`,`guild_id` FROM `rent_home` WHERE `home_id`>'0' limit 20",.@time,.@guid);
+	set .@timeori, gettimetick(2);
+	for (set .@i,0; .@i < .@count; set .@i,.@i+1) {
+	if (.@timeori > .@time[.@i]) {
+		//announce " Guild ID"+.@guid[.@i]+" Time "+.@time[.@i]+" "+.@timeori+"",bc_all,0xFFFF00;
+		query_sql "UPDATE `rent_home` SET `start_house` = '0' WHERE `guild_id` = '"+.@guid[.@i]+"'";
+		query_sql "UPDATE `rent_home` SET `end_house` = '0' WHERE `guild_id` = '"+.@guid[.@i]+"'";
+		query_sql "UPDATE `rent_home` SET `used` = '0' WHERE `guild_id` = '"+.@guid[.@i]+"'";
+		query_sql "UPDATE `rent_home` SET `guildsmall` = '0' WHERE `guild_id` = '"+.@guid[.@i]+"'";
+		query_sql "UPDATE `rent_home` SET `guildsmall1` = '0' WHERE `guild_id` = '"+.@guid[.@i]+"'";
+		query_sql "UPDATE `rent_home` SET `guildsmall2` = '0' WHERE `guild_id` = '"+.@guid[.@i]+"'";
+		query_sql "UPDATE `rent_home` SET `guildsmall3` = '0' WHERE `guild_id` = '"+.@guid[.@i]+"'";
+		query_sql "UPDATE `rent_home` SET `guild_id` = '0' WHERE `guild_id` = '"+.@guid[.@i]+"'";
+	}
+}
+	setnpctimer 0;
+	startnpctimer;
+end;
+
+OnInit:
+	initnpctimer;
+	end;
+}

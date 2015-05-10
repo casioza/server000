@@ -1,0 +1,99 @@
+//=============================================================
+//		-             Xtrap-Colo Scripts             -
+//=============================================================
+
+-	script	NOVENDING#1	-1,{
+OnInit:
+setcell "new_morocc",142,118,177,81,cell_novending,1;//กลางเมือง
+setcell "new_morocc",122,84,145,66,cell_novending,1;//ลานตีบวก
+setcell "new_morocc",184,119,213,94,cell_novending,1;//ลาน PC
+setcell "new_morocc",104,119,133,104,cell_novending,1;//ลานกิจกรรม
+setcell "new_morocc",155,39,163,33,cell_novending,1;//กิจกรรมวิ่ง
+setcell "new_morocc",195,50,163,36,cell_novending,1;//กิจกรรมจับคู่
+setcell "new_morocc",117,50,154,52,cell_novending,1;//ธงกิล
+end;
+}
+-	script	nocell	858,{close;}
+//===================================
+//	กลางเมือง
+//===================================
+new_morocc,178,100,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-1500	858
+new_morocc,180,102,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-1501	858
+//   ขวามอ
+new_morocc,176,98,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-2	858
+new_morocc,176,95,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-3	858
+new_morocc,176,92,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-4	858
+new_morocc,176,89,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-5	858
+new_morocc,176,86,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-6	858
+//    ซ้ายมอ
+new_morocc,142,102,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-7	858
+//new_morocc,142,99,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-8	858
+//new_morocc,142,96,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-9	858
+//new_morocc,142,93,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-10	858
+new_morocc,142,90,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-11	858
+new_morocc,142,87,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-12	858
+new_morocc,142,84,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-13	858
+new_morocc,139,84,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-14	858
+//   ล่างม
+new_morocc,145,81,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-15	858
+new_morocc,148,81,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-16	858
+new_morocc,151,81,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-17	858
+new_morocc,154,81,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-18	858
+new_morocc,157,81,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-19	858
+new_morocc,160,81,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-20	858
+new_morocc,163,81,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-21	858
+new_morocc,166,81,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-22	858
+new_morocc,169,81,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-23	858
+
+//===================================
+//	ลานตีบวก
+//===================================
+//   ขวา
+new_morocc,136,66,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-24	858
+new_morocc,139,66,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-25	858
+new_morocc,142,66,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-26	858
+new_morocc,145,66,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-27	858
+new_morocc,145,69,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-28	858
+new_morocc,145,78,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-29	858
+//   บน
+new_morocc,125,84,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-30	858
+new_morocc,128,84,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-31	858
+//   ซ้าย
+new_morocc,122,84,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-32	858
+new_morocc,122,81,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-33	858
+new_morocc,122,78,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-34	858
+new_morocc,122,75,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-35	858
+new_morocc,122,72,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-36	858
+new_morocc,122,69,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-37	858
+
+
+
+new_morocc,195,50,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-38	858
+new_morocc,198,50,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-39	858
+new_morocc,201,50,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-40	858
+new_morocc,204,50,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-41	858
+new_morocc,207,50,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-42	858
+new_morocc,210,50,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-43	858
+new_morocc,213,50,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-44	858
+new_morocc,216,50,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-45	858
+new_morocc,219,50,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-46	858
+
+new_morocc,195,47,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-47	858
+new_morocc,195,44,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-48	858
+new_morocc,195,41,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-49	858
+new_morocc,195,38,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-50	858
+new_morocc,195,36,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-51	858
+
+new_morocc,198,36,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-52	858
+new_morocc,201,36,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-53	858
+new_morocc,204,36,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-54	858
+new_morocc,207,36,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-55	858
+new_morocc,210,36,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-56	858
+new_morocc,213,36,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-57	858
+new_morocc,216,36,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-58	858
+new_morocc,219,36,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-59	858
+
+new_morocc,219,38,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-60	858
+new_morocc,219,41,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-61	858
+new_morocc,219,44,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-62	858
+new_morocc,219,47,5	duplicate(nocell)	ห้ามตั้งร้าน#nocell-63	858

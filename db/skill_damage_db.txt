@@ -1,0 +1,22 @@
+// Manage skill damage [Lilith]
+// Format: Skill ID, Mode, PC damage, Mob Damage, Boss Damage, Other damage
+// Mode
+// 1    - normal maps
+// 2    - PVP
+// 4    - GVG
+// 8    - Battlegrounds
+// 32   - zone 1
+// 64   - zone 2
+// 128  - zone 3
+// 256  - zone 4
+// 512  - zone 5
+// 1024 - zone 6
+// 2048 - zone 7
+
+// ตัวอย่าง:
+// เลขสกิล, normal maps, ส่งผล 0% สำหรับผู้เล่น, ส่งผลเพิ่มขึ้น 50% สำหรับมอนเตอร์, ส่งผลน้อยลง 30% สำหรับ Boss, ส่งผลมากขึ้นสำหรับโจมตีปกติ 10%
+// 42,1,0,50,-30,10
+
+14,1,1000,1000,100,1000
+19,1,1000,1000,100,1000
+

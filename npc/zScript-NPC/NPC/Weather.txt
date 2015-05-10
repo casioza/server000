@@ -1,0 +1,33 @@
+//===== eAthena Script ======================================= 
+//= Weather
+//===== By: ================================================== 
+//= PlayNewZone
+//= VanNovA
+//===== Description: ========================================= 
+//= Weather hmm
+//============================================================
+morocc.gat,0,0,0	script	weather_aha_clouds	-1,{
+OnClock1258:
+	set $weatheraha,rand(1,30);
+	if($weatheraha==1||$weatheraha==2||$weatheraha==3){atcommand "@sakura";announce "[ Weather ] : ใบขาวๆนั่นตกจากต้น ซากุระ ทำให้อากาศสดชื่น",8; }
+	if($weatheraha==4||$weatheraha==5||$weatheraha==6){atcommand "@leaves";announce "[ Weather ] : ใบไม้ผลัดใบซะแล้ว วันนี้ช่างสดใสเหลือเกิน",8; }
+	if($weatheraha==7){atcommand "@fog";announce "[ Weather ] : วันนี้อากาศเลวร้ายมาก ฝุ่นเยอะเหลือเกิน",8; }
+end;
+}
+morocc.gat,0,0,0	script	weather_aha_day	-1,{
+OnClock0600:
+	announce "[ Weather ] : เช้านี้อากาศแจ่มใส่ สูดหายใจสักนิดแล้วลุยกันต่อ",8; 
+	day;
+end;
+}
+morocc.gat,0,0,0	script	weather_aha_clearran	-1,{
+OnClock1700:
+	announce "[ Weather ] : พระอาทิตย์กำลังจะตกแล้ว",8; 
+	atcommand "@clearweather";
+end;
+}
+morocc.gat,0,0,0	script	weather_aha_night	-1,{
+OnClock1800:
+	night;
+end;
+}

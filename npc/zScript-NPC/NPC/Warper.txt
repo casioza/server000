@@ -1,0 +1,189 @@
+//========Script=========================
+//==Support PVP Prontera V 1.0a=================
+//====By:Cz-Club=====================
+//====PongsatorN===============
+/*
+-	script	onalive	-1,{
+onalive:
+OnPCDieEvent:
+getmapxy @mapname$,@mapx,@mapy,0,strcharinfo(0);
+if (@mapname$ == "pvp_n_8-3") goto ok;
+close;
+
+ok:
+sleep2 700;
+atcommand "@alive";
+percentheal 100,100;
+sc_start 30,3600000,10;  ///=== BLESSING
+sc_start 32,3600000,10;  ///=== INCREASEAGI
+warp "pvp_n_8-3",0,0;
+end;
+}
+-	script	message	-1,{
+OnPCDieEvent:
+message strcharinfo(0),"เอื้อออก ตายอีกแล้วตู = =;!!";
+emotion e_omg,2;
+}
+*/
+
+//new_morocc,170,104,4	script	Warper#g1-1::warp	467,{
+mes "[Warper Service] ";
+mes "สวัสดี ท่านต้องการจะไปที่ไหน?";
+next;
+menu "PVP ^006611["+getmapusers("pvp_y_1-2")+"]^000080 ["+getmapusers("pvp_y_7-2")+"]^0000FF ["+getmapusers("pvp_y_7-5")+"]",wpvp,"ห้องทำยา^008080 ["+getmapusers ("turbo_room")+"]",mpr,"ไปล่าบอส^0000FF ["+getmapusers ("prt_fild05")+"]",wboss,"Marc/Evil druid^FF0000 ["+getmapusers ("moc_fild07")+"]",wmon1,"ไปตกปลา ^FF0000 ["+getmapusers ("new_5-1")+"]^000000",fish,"ทดสอบอาวุธ ^008080 ["+getmapusers ("in_hunter")+"]",test,"แต่งงาน",mar;
+
+close;
+
+mar:
+warp "prt_church.gat",100,95;
+close;
+
+test:
+warp "in_hunter",99,104;
+close;
+
+wpvp:
+warp "pvp_y_1-2",0,0;
+close;
+
+mpr:
+warp "turbo_room",99,111;
+close;
+
+wboss:
+warp "prt_fild05",0,0;
+close;
+
+wmon1:
+warp "moc_fild07",0,0;
+close;
+
+fish:
+warp "sec_in02",129,162;
+close;
+
+OnInit:
+	waitingroom "PVP/ล่าบอส/อื่นๆ",0;
+	end;
+}
+turbo_e_16,303,168,4	script	Deathmath	512,{
+mes "[Deathmath]";
+mes "^FF0000คำแนะนำ^000000";
+mes "ในนี้ท่านจะฟื้นคืนชีพและ";
+mes "มีบัฟไห้อัตโนมัติ หลังจากที่คุณฟื้น";
+mes "^FF0000เวลาจะออกไห้กดเลือกตัวละคร หรือใช้คำสั่ง @load^000000";
+next;
+menu "^ff0000•^006611 ^000000[^ff0000PvP Room Deathmath ^0066111^000000] ^006611Online^000080 "+getmapusers ("pvp_y_1-2")+"^000080 คน",Lot,"ไม่ล่ะ",Lno;
+Lot:
+next;
+warp "pvp_n_8-3.gat",0,0;
+close;
+
+Lno:
+mes ".......";
+close;
+OnInit:
+	waitingroom "PvP Deathmath ตายเกิด",0;
+	end;
+}
+//--------------------------------------
+//---------PVP1----GVG-------------------
+//- Powerzees
+//- Fix Bug ดัดแปลง สคริป icez``
+
+//---PVP---//
+turbo_e_16,292,168,5	script	PVP	466,{
+mes "PVP";
+mes "เลือก สถานที่ ได้เลยจ้า";
+mes "ขอให้โชคดีนะ";
+next;
+mes "PVP";
+mes "กรุณาเลือกห้อง";
+menu "^ff0000•^006611Izlude["+getmapusers("pvp_y_7-2")+"]",map1,
+"^ff0000•^006611Morocc["+getmapusers("pvp_y_7-5")+"]",map2,
+"^ff0000•^006611Tierra1["+getmapusers("bat_a01")+"]",map3,
+"^ff0000•^006611Tierra2["+getmapusers("bat_a02")+"]",map4,
+"^ff0000•^006611Frebeus1["+getmapusers("bat_b01")+"]",map5,
+"^ff0000•^006611Frebeus2["+getmapusers("bat_b02")+"]",map6,
+"^ff0000•^006611 [^ff0000PvP Room ^0066111-1^000000] ^006611Online "+getmapusers ("pvp_y_3-2")+"^000080 คน",r11;
+
+map1:
+warp "pvp_y_7-2",0,0;
+close;
+
+map2:
+warp "pvp_y_7-5",0,0;
+close;
+
+map3:
+warp "bat_a01",0,0;
+close;
+
+map4:
+warp "bat_a02",0,0;
+close;
+
+map5:
+warp "bat_b01",0,0;
+close;
+
+map6:
+warp "bat_b02",0,0;
+close;
+
+r11:
+if(getmapusers("pvp_y_3-2") >= 2) { dispbottom "• ไม่สามารถเข้าไปได้เนื่องจาก ห้องนี้เป็นห้อง 1-1 และมีคนครบแล้ว •"; end; }
+warp "pvp_y_3-2",0,0;
+close;
+
+}
+
+prt_gld,67,179,4	duplicate(warp)	Warper#g1-2	512
+prt_gld,166,238,4	duplicate(warp)	Warper#g1-3	512
+prt_gld,255,184,4	duplicate(warp)	Warper#g1-4	512
+//-----------------------------------------------------------------------------
+in_hunter.gat,105,101,4	script	Atk Emperium	907,{
+	mes "Atk Emperium..!!";
+	mes " ";
+	next;
+	menu "- Summon Emperium",-,"- Kill Emperium",L_no;
+	if ( $@MonEmpe != 0 ) {
+		mes "Can not summon.";
+	} else {
+		mes "Summon Emperium.";
+		set $@MonEmpe,1;
+		monster "in_hunter.gat",99,100,"Emperium",1288,1,"Atk Emperium::OnEmperiumDead";
+	}
+	close;
+L_no:
+	killmonsterall "morocc.gat";
+OnEmperiumDead:
+	set $@MonEmpe,0;
+	close;
+OnInit:
+	set $@MonEmpe,0;
+	Waitingroom "<( Atk Emperium )>" , 0;
+	end;
+}
+prt_gld,151,76,4	script	Guildwar	105,{
+mes "[Guildwar]";
+mes "สวัสดี";
+mes "ท่านสามารถเดินทางไปร่วมสงคราม Guildwar ได้ที่นี้.";
+next;
+menu "- ^FF9000 [Guildwar HolyShadow]^000000",holy,"- ^FF9000 [Guildwar Neuschwanstein]^000000",Neus,"- ^FF9000 [Guildwar Mersetzdeitz]^000000",mer,"- ^FF9000 [Guildwar Fadhgridh]^000000",Fad,"- ข้ายังไม่พร้อม",errnd;
+
+
+holy: warp "payg_cas03",226, 26; close;
+Neus: warp "aldeg_cas01",34, 249; close;
+mer: warp "gefg_cas05",10, 136; close;
+Fad: warp "prtg_cas03",168, 12; close;
+
+errnd:
+mes "[Guildwar]";
+mes "แล้วพบกันใหม่";
+close;
+
+OnInit:
+waitingroom "Warp Guild War",0;
+end;
+}

@@ -1,0 +1,381 @@
+new_morocc,170,104,4	script	mapbossroom	450,{
+mes "^FF0000[ Boss Room ]^000000";
+mes "^33CC66∑Ë“πºŸÈ°≈È“¢Õ‡™‘≠∑Ë“π ŸË ^FF0000Map Boss^000000";
+mes "^FF0000√À— ¥√ÁÕª TCG §◊Õ :: 7227 ^000000 ";
+mes "^0033FF∑Ë“πµÈÕß°“√‰ª∑’ËMap‰Àπ≈Ë–?^000000";
+mes "^FFCC66‚Õ°“ ¥√ÁÕª·§Ë 100 % µËÕ∫Õ  1 µ—«^000000";
+mes "^FF0000Boss „πÀÈÕß ®– ‡°‘¥ ∑ÿ°Ê 10 π“∑’^000000";
+menu 
+"^33CC66∫Õ  MVP¥√ÁÕªTCG Status ‰¡Ë‡°‘π^FF0000 200 ^000000 ["+getmapusers("moc_fild19")+"]",Lgo1,
+"^FF6699∫Õ  MVP¥√ÁÕªTCG Status ‰¡Ë‡°‘π^FF0000 400 ^000000 ["+getmapusers("xmas_fild01")+"]",Lgo2,
+"^0000CC∫Õ  MVP¥√ÁÕªTCG Status ‰¡Ë‡°‘π^FF0000 600 ^000000 ["+getmapusers("ve_fild01")+"]",Lgo3,
+"^330000∫Õ  MVP¥√ÁÕªTCG Status ^FF0000‰¡Ë®”°—¥ ‡µµ— ^000000 ["+getmapusers("ein_fild10")+"]",Lgo4,
+"^330000∫Õ  MVP¥√ÁÕªTCG Status ^FF0000‰¡Ë®”°—¥ ‡µµ— ^000000 ["+getmapusers("mjolnir_05")+"]",Lgo5;
+
+
+Lgo1:
+if(readparam(13) > 200) goto no;
+if(readparam(14) > 200) goto no;
+if(readparam(15) > 200) goto no;
+if(readparam(16) > 200) goto no;
+if(readparam(17) > 200) goto no;
+if(readparam(18) > 200) goto no;
+warp "moc_fild19",0,0;
+close;
+
+Lgo2: 
+if(readparam(13) > 400) goto no;
+if(readparam(14) > 400) goto no;
+if(readparam(15) > 400) goto no;
+if(readparam(16) > 400) goto no;
+if(readparam(17) > 400) goto no;
+if(readparam(18) > 400) goto no;
+warp "xmas_fild01",0,0; 
+close; 
+
+Lgo3:
+if(readparam(13) > 600) goto no;
+if(readparam(14) > 600) goto no;
+if(readparam(15) > 600) goto no;
+if(readparam(16) > 600) goto no;
+if(readparam(17) > 600) goto no;
+if(readparam(18) > 600) goto no;
+warp "ve_fild01",0,0; 
+close; 
+
+Lgo4:
+warp "ein_fild10",0,0; 
+close; 
+
+Lgo5:
+warp "mjolnir_05",0,0; 
+close; 
+
+no:
+mes "§ÿ≥ Status ‰¡Ëµ√ßµ“¡ÀÈÕß";
+close; 
+
+OnInit:
+Waitingroom "::  ÀÈÕß√«¡∫Õ   ::" , 0;
+end;
+}
+
+moc_fild19,0,0,0,0	monster	Osiris	1038,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Eddga	1115,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Phreeoni	1159,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Lady Tanee	1688,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Thanatos Phantom	1708,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Orc Hero	1087,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Drake	1112,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Maya	1147,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Garm	1252,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Moonlight Flower	1150,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Egnigem Cenia	1658,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Dark Lord	1272,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Atros	1785,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Amon ra	1511,2,600000,0,0
+moc_fild19,0,0,0,0	monster	Berzebub	1874,2,600000,0,0
+//moc_fild19,0,0,0,0	monster	Blood Mother	2736,3,600000,0,0
+moc_fild19,0,0,0,0	monster	Lucifer	2743,3,600000,0,0
+//moc_fild19,0,0,0,0	monster	Corpse Hand	2738,3,600000,0,0
+//moc_fild19,0,0,0,0	monster	Leviathan	2754,3,600000,0,0
+
+
+
+
+
+xmas_fild01,0,0,0,0	monster	Osiris	1038,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Eddga	1115,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Phreeoni	1159,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Lady Tanee	1688,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Thanatos Phantom	1708,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Orc Hero	1087,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Drake	1112,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Maya	1147,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Garm	1252,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Moonlight Flower	1150,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Egnigem Cenia	1658,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Dark Lord	1272,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Atros	1785,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Amon ra	1511,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Berzebub	1874,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Evillsnake Lord	1418,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Doppelganger	1046,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Dracula	1389,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Naght Seiger	1956,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Satan Morroc	1917,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Hardrosk Mammoth	1990,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Valkyrie Randgris	1751,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Tao Gunka	1583,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Gloom Under Night	1768,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Ktullanux	1779,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Kiel D-01	1734,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Samurai Specter	1492,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Egnigem Cenia	1658,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Vesper	1685,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Golden Thief Bug	1086,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Orc Lord	1190,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Stormy Knight	1251,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Turtle General	1312,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Lord of the Dead	1373,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Detardeurus	1719,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Ifrit	1832,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Gopinich	1885,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Ghostring	1120,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Arc Angeling	1388,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Deviling	1582,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	RSX-0806	1623,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	White Lady	1630,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Boitata	2068,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Fallen Bishop Hibram	1871,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Nidhoggr's Shadow 	2022,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Assassin Cross Eremes	1647,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Lord Knight Seyren	1646,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Sniper Shecil	1650,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Whitesmith Harword	1648,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	High Priest Magaleta	1649,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	High Wizard Katrinn	1651,8,600000,0,0
+//xmas_fild01,0,0,0,0	monster	Blood Mother	2736,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Lucifer	2743,8,600000,0,0
+//xmas_fild01,0,0,0,0	monster	Corpse Hand	2738,8,600000,0,0
+//xmas_fild01,0,0,0,0	monster	Leviathan	2754,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Hell Wolf	2733,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Scorpion King	2757,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Tutankhamen	2744,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Davy Jones	2755,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	King Golden Mole	2742,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	God Angel	2728,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Godring	2726,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Siren Mermaid	2753,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Ichthyosaur	2760,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Sphinx	2759,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Daehyon	2770,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Poring GM	2725,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Kades	2771,8,600000,0,0
+//xmas_fild01,0,0,0,0	monster	Pyuriel	2769,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Amdarais	2763,8,600000,0,0
+xmas_fild01,0,0,0,0	monster	Arch Berzebub	2731,8,600000,0,0
+
+
+
+
+ve_fild01,0,0,0,0	monster	Osiris	1038,8,600000,0,0
+ve_fild01,0,0,0,0	monster	Eddga	1115,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Phreeoni	1159,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Lady Tanee	1688,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Thanatos Phantom	1708,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Orc Hero	1087,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Drake	1112,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Maya	1147,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Garm	1252,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Moonlight Flower	1150,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Egnigem Cenia	1658,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Dark Lord	1272,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Atros	1785,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Amon ra	1511,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Berzebub	1874,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Evillsnake Lord	1418,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Doppelganger	1046,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Dracula	1389,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Naght Seiger	1956,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Satan Morroc	1917,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Hardrosk Mammoth	1990,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Valkyrie Randgris	1751,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Tao Gunka	1583,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Gloom Under Night	1768,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Ktullanux	1779,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Kiel D-01	1734,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Samurai Specter	1492,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Egnigem Cenia	1658,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Vesper	1685,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Golden Thief Bug	1086,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Orc Lord	1190,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Stormy Knight	1251,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Turtle General	1312,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Lord of the Dead	1373,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Detardeurus	1719,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Ifrit	1832,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Gopinich	1885,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Ghostring	1120,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Arc Angeling	1388,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Deviling	1582,10,600000,0,0
+ve_fild01,0,0,0,0	monster	RSX-0806	1623,10,600000,0,0
+ve_fild01,0,0,0,0	monster	White Lady	1630,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Boitata	2068,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Fallen Bishop Hibram	1871,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Nidhoggr's Shadow 	2022,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Assassin Cross Eremes	1647,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Lord Knight Seyren	1646,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Sniper Shecil	1650,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Whitesmith Harword	1648,10,600000,0,0
+ve_fild01,0,0,0,0	monster	High Priest Magaleta	1649,10,600000,0,0
+ve_fild01,0,0,0,0	monster	High Wizard Katrinn	1651,10,600000,0,0
+//ve_fild01,0,0,0,0	monster	Blood Mother	2736,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Lucifer	2743,10,600000,0,0
+//ve_fild01,0,0,0,0	monster	Corpse Hand	2738,10,600000,0,0
+//ve_fild01,0,0,0,0	monster	Leviathan	2754,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Hell Wolf	2733,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Scorpion King	2757,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Tutankhamen	2744,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Davy Jones	2755,10,600000,0,0
+ve_fild01,0,0,0,0	monster	King Golden Mole	2742,10,600000,0,0
+ve_fild01,0,0,0,0	monster	God Angel	2728,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Godring	2726,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Siren Mermaid	2753,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Ichthyosaur	2760,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Sphinx	2759,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Daehyon	2770,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Poring GM	2725,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Kades	2771,10,600000,0,0
+//ve_fild01,0,0,0,0	monster	Pyuriel	2769,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Amdarais	2763,10,600000,0,0
+ve_fild01,0,0,0,0	monster	Arch Berzebub	2731,10,600000,0,0
+
+
+
+ein_fild10,0,0,0,0	monster	Osiris	1038,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Eddga	1115,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Phreeoni	1159,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Lady Tanee	1688,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Thanatos Phantom	1708,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Orc Hero	1087,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Drake	1112,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Maya	1147,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Garm	1252,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Moonlight Flower	1150,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Egnigem Cenia	1658,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Dark Lord	1272,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Atros	1785,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Amon ra	1511,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Berzebub	1874,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Evillsnake Lord	1418,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Doppelganger	1046,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Dracula	1389,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Naght Seiger	1956,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Satan Morroc	1917,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Hardrosk Mammoth	1990,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Valkyrie Randgris	1751,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Tao Gunka	1583,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Gloom Under Night	1768,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Ktullanux	1779,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Kiel D-01	1734,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Samurai Specter	1492,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Egnigem Cenia	1658,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Vesper	1685,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Golden Thief Bug	1086,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Orc Lord	1190,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Stormy Knight	1251,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Turtle General	1312,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Lord of the Dead	1373,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Detardeurus	1719,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Ifrit	1832,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Gopinich	1885,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Ghostring	1120,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Arc Angeling	1388,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Deviling	1582,10,600000,0,0
+ein_fild10,0,0,0,0	monster	RSX-0806	1623,10,600000,0,0
+ein_fild10,0,0,0,0	monster	White Lady	1630,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Boitata	2068,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Fallen Bishop Hibram	1871,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Nidhoggr's Shadow 	2022,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Assassin Cross Eremes	1647,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Lord Knight Seyren	1646,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Sniper Shecil	1650,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Whitesmith Harword	1648,10,600000,0,0
+ein_fild10,0,0,0,0	monster	High Priest Magaleta	1649,10,600000,0,0
+ein_fild10,0,0,0,0	monster	High Wizard Katrinn	1651,10,600000,0,0
+//ein_fild10,0,0,0,0	monster	Blood Mother	2736,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Lucifer	2743,10,600000,0,0
+//ein_fild10,0,0,0,0	monster	Corpse Hand	2738,10,600000,0,0
+//ein_fild10,0,0,0,0	monster	Leviathan	2754,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Hell Wolf	2733,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Scorpion King	2757,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Tutankhamen	2744,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Davy Jones	2755,10,600000,0,0
+ein_fild10,0,0,0,0	monster	King Golden Mole	2742,10,600000,0,0
+ein_fild10,0,0,0,0	monster	God Angel	2728,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Godring	2726,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Siren Mermaid	2753,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Ichthyosaur	2760,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Sphinx	2759,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Daehyon	2770,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Poring GM	2725,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Kades	2771,10,600000,0,0
+//ein_fild10,0,0,0,0	monster	Pyuriel	2769,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Amdarais	2763,10,600000,0,0
+ein_fild10,0,0,0,0	monster	Arch Berzebub	2731,10,600000,0,0
+
+
+
+mjolnir_05,0,0,0,0	monster	Osiris	1038,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Eddga	1115,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Phreeoni	1159,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Lady Tanee	1688,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Thanatos Phantom	1708,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Orc Hero	1087,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Drake	1112,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Maya	1147,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Garm	1252,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Moonlight Flower	1150,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Egnigem Cenia	1658,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Dark Lord	1272,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Atros	1785,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Amon ra	1511,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Berzebub	1874,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Evillsnake Lord	1418,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Doppelganger	1046,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Dracula	1389,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Naght Seiger	1956,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Satan Morroc	1917,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Hardrosk Mammoth	1990,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Valkyrie Randgris	1751,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Tao Gunka	1583,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Gloom Under Night	1768,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Ktullanux	1779,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Kiel D-01	1734,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Samurai Specter	1492,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Egnigem Cenia	1658,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Vesper	1685,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Golden Thief Bug	1086,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Orc Lord	1190,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Stormy Knight	1251,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Turtle General	1312,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Lord of the Dead	1373,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Detardeurus	1719,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Ifrit	1832,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Gopinich	1885,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Ghostring	1120,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Arc Angeling	1388,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Deviling	1582,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	RSX-0806	1623,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	White Lady	1630,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Boitata	2068,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Fallen Bishop Hibram	1871,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Nidhoggr's Shadow 	2022,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Assassin Cross Eremes	1647,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Lord Knight Seyren	1646,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Sniper Shecil	1650,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Whitesmith Harword	1648,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	High Priest Magaleta	1649,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	High Wizard Katrinn	1651,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Blood Mother	2736,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Lucifer	2743,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Corpse Hand	2738,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Leviathan	2754,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Hell Wolf	2733,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Scorpion King	2757,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Tutankhamen	2744,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Davy Jones	2755,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	King Golden Mole	2742,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	God Angel	2728,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Godring	2726,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Siren Mermaid	2753,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Ichthyosaur	2760,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Sphinx	2759,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Daehyon	2770,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Poring GM	2725,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Kades	2771,10,600000,0,0
+//mjolnir_05,0,0,0,0	monster	Pyuriel	2769,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Amdarais	2763,10,600000,0,0
+mjolnir_05,0,0,0,0	monster	Arch Berzebub	2731,10,600000,0,0
+

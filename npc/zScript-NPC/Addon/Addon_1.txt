@@ -1,0 +1,75 @@
+//-------------------------------------------------------------------------------
+// NPC Design By InCez-WickeD
+
+morocc.gat,0,0,0	script	invisibleAuto	-1,{
+OnInit:
+disablenpc "TurboTrack";
+disablenpc "war001";
+disablenpc "war002";
+disablenpc "war003";
+disablenpc "war004";
+disablenpc "war005";
+disablenpc "war006";
+disablenpc "war007";
+disablenpc "war008";
+disablenpc "war009";
+disablenpc "war10";
+disablenpc "war11";
+disablenpc "war13";
+disablenpc "war14";
+disablenpc "war15";
+disablenpc "war16";
+disablenpc "war17";	
+disablenpc "war19";	
+disablenpc "war20";
+disablenpc "war66";
+disablenpc "war21";
+disablenpc "war22";
+end;
+
+OnAgitEnd:
+disablenpc "war001";
+disablenpc "war002";
+disablenpc "war003";
+disablenpc "war004";
+disablenpc "war005";
+disablenpc "war006";
+disablenpc "war007";
+disablenpc "war008";
+disablenpc "war009";
+disablenpc "war10";
+disablenpc "war11";
+disablenpc "war13";
+disablenpc "war14";
+disablenpc "war15";
+disablenpc "war16";
+disablenpc "war17";	
+disablenpc "war19";	
+disablenpc "war20";
+disablenpc "war66";
+disablenpc "war21";
+disablenpc "war22";
+end;
+}
+
+new_morocc,178,105,4	script	#Flag5	858,{
+end;
+
+Oninit:
+waitingroom " ตกปลา & ทำฟาร์ม",0;
+end;
+}
+
+new_morocc,177,104,4	script	#tosave2	45,1,1,{ 
+OnTouch:
+mes "กรุณาเลือกสถานที่ค่ะ ....";
+next;
+menu "- Fishing Land",s1,"- Farm สัตว์ - พืช",s2,"- เกมส์จับคู่",s3;
+s1:
+warp "sec_in02",129,162; close;
+s2:
+warp "prontera",239,76; close;
+s3:
+warp "new_morocc",209,46; 
+close; 
+}

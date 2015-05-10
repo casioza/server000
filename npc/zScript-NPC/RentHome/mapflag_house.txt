@@ -1,0 +1,110 @@
+//===== Developers Script ===================================
+//= House
+//===== Current Version =====================================
+//= 1.0
+//===== Description ========================================= 
+//= House
+//===== Additional Comments ================================= 
+//= 1.0 Start Version
+//= 1.1 Edit By Xtrap-COLO
+//===========================================================
+
+home01	mapflag	nomemo
+home01	mapflag	noteleport
+home01	mapflag	nobranch
+home01	mapflag	loadevent
+
+home02	mapflag	nomemo
+home02	mapflag	noteleport
+home02	mapflag	nobranch
+home02	mapflag	loadevent
+
+home03	mapflag	nomemo
+home03	mapflag	noteleport
+home03	mapflag	nobranch
+home03	mapflag	loadevent
+
+home04	mapflag	nomemo
+home04	mapflag	noteleport
+home04	mapflag	nobranch
+home04	mapflag	loadevent
+
+home05	mapflag	nomemo
+home05	mapflag	noteleport
+home05	mapflag	nobranch
+home05	mapflag	loadevent
+
+home06	mapflag	nomemo
+home06	mapflag	noteleport
+home06	mapflag	nobranch
+home06	mapflag	loadevent
+
+home07	mapflag	nomemo
+home07	mapflag	noteleport
+home07	mapflag	nobranch
+home07	mapflag	loadevent
+
+home08	mapflag	nomemo
+home08	mapflag	noteleport
+home08	mapflag	nobranch
+home08	mapflag	loadevent
+
+home09	mapflag	nomemo
+home09	mapflag	noteleport
+home09	mapflag	nobranch
+home09	mapflag	loadevent
+
+home10	mapflag	nomemo
+home10	mapflag	noteleport
+home10	mapflag	nobranch
+home10	mapflag	loadevent
+
+home11	mapflag	nomemo
+home11	mapflag	noteleport
+home11	mapflag	nobranch
+home11	mapflag	loadevent
+
+home12	mapflag	nomemo
+home12	mapflag	noteleport
+home12	mapflag	nobranch
+home12	mapflag	loadevent
+
+home13	mapflag	nomemo
+home13	mapflag	noteleport
+home13	mapflag	nobranch
+home13	mapflag	loadevent
+
+home14	mapflag	nomemo
+home14	mapflag	noteleport
+home14	mapflag	nobranch
+home14	mapflag	loadevent
+
+home15	mapflag	nomemo
+home15	mapflag	noteleport
+home15	mapflag	nobranch
+home15	mapflag	loadevent
+
+home16	mapflag	nomemo
+home16	mapflag	noteleport
+home16	mapflag	nobranch
+home16	mapflag	loadevent
+
+home17	mapflag	nomemo
+home17	mapflag	noteleport
+home17	mapflag	nobranch
+home17	mapflag	loadevent
+
+home18	mapflag	nomemo
+home18	mapflag	noteleport
+home18	mapflag	nobranch
+home18	mapflag	loadevent
+
+home19	mapflag	nomemo
+home19	mapflag	noteleport
+home19	mapflag	nobranch
+home19	mapflag	loadevent
+
+home20	mapflag	nomemo
+home20	mapflag	noteleport
+home20	mapflag	nobranch
+home20	mapflag	loadevent
